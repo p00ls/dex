@@ -9,7 +9,6 @@ import { PairState, useV2Pairs } from './useV2Pairs'
 
 function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const allCurrencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
-
   const allPairs = useV2Pairs(allCurrencyCombinations)
 
   return useMemo(
@@ -46,7 +45,6 @@ export function useBestV2Trade(
     [tradeType, amountSpecified, otherCurrency]
   )
   const allowedPairs = useAllCommonPairs(currencyIn, currencyOut)
-
   return useMemo(() => {
     if (amountSpecified && currencyIn && currencyOut && allowedPairs.length > 0) {
       if (maxHops === 1) {

@@ -27,6 +27,7 @@ import {
   WBTC_ARBITRUM_ONE,
   WBTC_OPTIMISM,
   WETH9_EXTENDED,
+  ZEROZERO,
 } from './tokens'
 
 type ChainTokenList = {
@@ -88,16 +89,11 @@ export const COMMON_BASES: ChainCurrencyList = {
     WBTC,
     WETH9_EXTENDED[SupportedChainId.MAINNET],
   ],
-  [SupportedChainId.ROPSTEN]: [
-    ExtendedEther.onChain(SupportedChainId.ROPSTEN),
-    WETH9_EXTENDED[SupportedChainId.ROPSTEN],
+  [SupportedChainId.POOLS]: [
+    ExtendedEther.onChain(SupportedChainId.POOLS),
+    WETH9_EXTENDED[SupportedChainId.POOLS],
+    ZEROZERO,
   ],
-  [SupportedChainId.RINKEBY]: [
-    ExtendedEther.onChain(SupportedChainId.RINKEBY),
-    WETH9_EXTENDED[SupportedChainId.RINKEBY],
-  ],
-  [SupportedChainId.GOERLI]: [ExtendedEther.onChain(SupportedChainId.GOERLI), WETH9_EXTENDED[SupportedChainId.GOERLI]],
-  [SupportedChainId.KOVAN]: [ExtendedEther.onChain(SupportedChainId.KOVAN), WETH9_EXTENDED[SupportedChainId.KOVAN]],
   [SupportedChainId.ARBITRUM_ONE]: [
     ExtendedEther.onChain(SupportedChainId.ARBITRUM_ONE),
     DAI_ARBITRUM_ONE,

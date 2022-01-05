@@ -1,8 +1,10 @@
 import { Ether, Token, WETH9 } from '@uniswap/sdk-core'
 
+import { WETH, ZERO } from '../p00ls'
 import { UNI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 
+export const ZEROZERO = new Token(SupportedChainId.POOLS, ZERO, 18, '$00', 'zero zero')
 export const AMPL = new Token(
   SupportedChainId.MAINNET,
   '0xD46bA6D942050d489DBd938a2C909A5d5039A161',
@@ -159,14 +161,12 @@ export const SWISE = new Token(
 )
 export const UNI: { [chainId: number]: Token } = {
   [SupportedChainId.MAINNET]: new Token(SupportedChainId.MAINNET, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.RINKEBY]: new Token(SupportedChainId.RINKEBY, UNI_ADDRESS[4], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.ROPSTEN]: new Token(SupportedChainId.ROPSTEN, UNI_ADDRESS[3], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.GOERLI]: new Token(SupportedChainId.GOERLI, UNI_ADDRESS[5], 18, 'UNI', 'Uniswap'),
-  [SupportedChainId.KOVAN]: new Token(SupportedChainId.KOVAN, UNI_ADDRESS[42], 18, 'UNI', 'Uniswap'),
+  [SupportedChainId.POOLS]: new Token(SupportedChainId.POOLS, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
 }
 
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ...WETH9,
+  [SupportedChainId.POOLS]: new Token(SupportedChainId.POOLS, WETH, 18, 'WETH', 'Wrapped Ether'),
   [SupportedChainId.OPTIMISM]: new Token(
     SupportedChainId.OPTIMISM,
     '0x4200000000000000000000000000000000000006',
