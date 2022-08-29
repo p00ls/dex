@@ -1,10 +1,11 @@
-import { ALL_SUPPORTED_CHAIN_IDS, SupportedChainId } from './chains'
+import { ALL_SUPPORTED_CHAIN_IDS, L2_CHAIN_IDS, SupportedChainId } from './chains'
 
 describe('chains', () => {
   describe('ALL_SUPPORTED_CHAIN_IDS', () => {
     it('contains all the values in the SupportedChainId enum', () => {
       Object.values(SupportedChainId).forEach((chainId) => {
-        if (typeof chainId === 'number') expect(ALL_SUPPORTED_CHAIN_IDS.includes(chainId as number)).toBeTruthy()
+        if (typeof chainId === 'number' && !L2_CHAIN_IDS.includes(chainId as number))
+          expect(ALL_SUPPORTED_CHAIN_IDS.includes(chainId as number)).toBeTruthy()
       })
     })
 
