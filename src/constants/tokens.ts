@@ -1,8 +1,8 @@
 import { Ether, Token, WETH9 } from '@uniswap/sdk-core'
 
-import { WETH, ZERO } from '../p00ls'
 import { UNI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
+import { WETH, ZERO } from './p00ls'
 
 export const ZEROZERO = new Token(SupportedChainId.POOLS, ZERO, 18, '$00', 'zero zero')
 export const AMPL = new Token(
