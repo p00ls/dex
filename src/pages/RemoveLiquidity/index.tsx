@@ -266,7 +266,7 @@ export default function RemoveLiquidity({
           setAttemptingTxn(false)
 
           addTransaction(response, {
-            type: TransactionType.REMOVE_LIQUIDITY_V3,
+            type: TransactionType.REMOVE_LIQUIDITY,
             baseCurrencyId: currencyId(currencyA),
             quoteCurrencyId: currencyId(currencyB),
             expectedAmountBaseRaw: parsedAmounts[Field.CURRENCY_A]?.quotient.toString() ?? '0',

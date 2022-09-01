@@ -20,7 +20,6 @@ const FallbackWrapper = styled.div`
 const BodyWrapper = styled.div<{ margin?: string }>`
   padding: 1rem;
   width: 100%;
-  white-space: ;
 `
 
 const CodeBlockWrapper = styled.div`
@@ -131,11 +130,9 @@ function getRelevantState(): null | keyof AppState {
     case 'swap':
       return 'swap'
     case 'add':
-      if (pieces[1] === 'v2') return 'mint'
-      else return 'mintV3'
+      return 'mint'
     case 'remove':
-      if (pieces[1] === 'v2') return 'burn'
-      else return 'burnV3'
+      return 'burn'
   }
   return null
 }
