@@ -1,5 +1,5 @@
 import { Currency, Percent } from '@uniswap/sdk-core'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { FeeAmount } from 'constants/feeAmount'
 import { DAI, USDC, WBTC } from 'constants/tokens'
 import { render } from 'test-utils'
 

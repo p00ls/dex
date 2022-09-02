@@ -3,7 +3,6 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { Token } from '@uniswap/sdk-core'
-import { FeeAmount } from '@uniswap/v3-sdk'
 
 import { TokenAddressMap } from '../state/lists/hooks'
 
@@ -50,8 +49,4 @@ export function escapeRegExp(string: string): string {
 
 export function isTokenOnList(tokenAddressMap: TokenAddressMap, token?: Token): boolean {
   return Boolean(token?.isToken && tokenAddressMap[token.chainId]?.[token.address])
-}
-
-export function formattedFeeAmount(feeAmount: FeeAmount): number {
-  return feeAmount / 10000
 }

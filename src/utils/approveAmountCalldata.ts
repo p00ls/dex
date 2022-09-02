@@ -1,6 +1,6 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { toHex } from '@uniswap/v3-sdk'
+import { BigintIsh, Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import JSBI from 'jsbi'
 
 import { Erc20Interface } from '../abis/types/Erc20'
 
@@ -18,6 +18,20 @@ const ERC20_INTERFACE = new Interface([
     type: 'function',
   },
 ]) as Erc20Interface
+
+/**
+ * Converts a big int to a hex string
+ * @param bigintIsh
+ * @returns The hex encoded calldata
+ */
+function toHex(bigintIsh: BigintIsh) {
+  const bigInt = JSBI.BigInt(bigintIsh)
+  let hex = bigInt.toString(16)
+  if (hex.length % 2 !== 0) {
+    hex = `0${hex}`
+  }
+  return `0x${hex}`
+}
 
 export default function approveAmountCalldata(
   amount: CurrencyAmount<Currency>,
