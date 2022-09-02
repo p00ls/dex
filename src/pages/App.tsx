@@ -13,7 +13,6 @@ import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import { ApplicationModal } from '../state/application/reducer'
-import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
@@ -68,7 +67,6 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />
-      <Route component={DarkModeQueryParamReader} />
       <Route component={ApeModeQueryParamReader} />
       <Web3ReactManager>
         <AppWrapper>
