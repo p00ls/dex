@@ -15,5 +15,3 @@ export const api = generatedApi.enhanceEndpoints({
     },
   },
 })
-
-export const { useAllV3TicksQuery, useFeeTierDistributionQuery } = api
