@@ -2,14 +2,12 @@ import { useActiveWeb3React } from '../../hooks/web3'
 import { SkipFirst } from '../../types/tuple'
 import { useBlockNumber } from '../application/hooks'
 import { multicall } from './instance'
-export type { CallStateResult } from '@uniswap/redux-multicall' // re-export for convenience
 export { NEVER_RELOAD } from '@uniswap/redux-multicall' // re-export for convenience
 
 const {
   useMultipleContractSingleData: _useMultipleContractSingleData,
   useSingleCallResult: _useSingleCallResult,
   useSingleContractMultipleData: _useSingleContractMultipleData,
-  useSingleContractWithCallData: _useSingleContractWithCallData,
 } = multicall.hooks
 
 // Create wrappers for hooks so consumers don't need to get latest block themselves
@@ -29,11 +27,6 @@ export function useSingleCallResult(...args: SkipFirstTwoParams<typeof _useSingl
 export function useSingleContractMultipleData(...args: SkipFirstTwoParams<typeof _useSingleContractMultipleData>) {
   const { chainId, latestBlock } = useCallContext()
   return _useSingleContractMultipleData(chainId, latestBlock, ...args)
-}
-
-export function useSingleContractWithCallData(...args: SkipFirstTwoParams<typeof _useSingleContractWithCallData>) {
-  const { chainId, latestBlock } = useCallContext()
-  return _useSingleContractWithCallData(chainId, latestBlock, ...args)
 }
 
 function useCallContext() {

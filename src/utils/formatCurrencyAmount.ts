@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Price } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Fraction } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 
 export function formatCurrencyAmount(amount: CurrencyAmount<Currency> | undefined, sigFigs: number) {
@@ -15,16 +15,4 @@ export function formatCurrencyAmount(amount: CurrencyAmount<Currency> | undefine
   }
 
   return amount.toSignificant(sigFigs)
-}
-
-export function formatPrice(price: Price<Currency, Currency> | undefined, sigFigs: number) {
-  if (!price) {
-    return '-'
-  }
-
-  if (parseFloat(price.toFixed(sigFigs)) < 0.0001) {
-    return '<0.0001'
-  }
-
-  return price.toSignificant(sigFigs)
 }

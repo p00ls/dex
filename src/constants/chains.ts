@@ -24,8 +24,6 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.KOVAN,
 ] as const
 
-export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
-
 export interface L1ChainInfo {
   readonly blockWaitMsBeforeWarning?: number
   readonly docs: string
@@ -41,9 +39,7 @@ export interface L1ChainInfo {
   }
 }
 
-export type ChainInfo = { readonly [chainId: number]: L1ChainInfo } & {
-  readonly [chainId in SupportedL1ChainId]: L1ChainInfo
-}
+export type ChainInfo = { readonly [chainId: number]: L1ChainInfo }
 
 export const CHAIN_INFO: ChainInfo = {
   [SupportedChainId.MAINNET]: {
