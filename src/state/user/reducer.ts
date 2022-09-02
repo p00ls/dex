@@ -15,7 +15,6 @@ import {
   updateMatchesDarkMode,
   updateOptimismAlphaAcknowledged,
   updateUserClientSideRouter,
-  updateUserDarkMode,
   updateUserDeadline,
   updateUserExpertMode,
   updateUserLocale,
@@ -123,10 +122,6 @@ export default createReducer(initialState, (builder) =>
       }
 
       state.lastUpdateVersionTimestamp = currentTimestamp()
-    })
-    .addCase(updateUserDarkMode, (state, action) => {
-      state.userDarkMode = action.payload.userDarkMode
-      state.timestamp = currentTimestamp()
     })
     .addCase(updateMatchesDarkMode, (state, action) => {
       state.matchesDarkMode = action.payload.matchesDarkMode

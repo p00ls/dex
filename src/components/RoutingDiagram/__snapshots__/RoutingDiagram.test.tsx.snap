@@ -3,7 +3,7 @@
 exports[`renders multi route 1`] = `
 <DocumentFragment>
   <div
-    class="RoutingDiagram__Wrapper-sc-o1ook0-0 fUoVYh css-vurnku"
+    class="RoutingDiagram__Wrapper-sc-o1ook0-0 kWvQlz css-vurnku"
   >
     <div
       class="sc-bdnxRM Row-sc-nrd8cx-0 RoutingDiagram__RouteContainerRow-sc-o1ook0-1 lmTMKd itvFNV iiQQUx"
@@ -16,13 +16,13 @@ exports[`renders multi route 1`] = `
           class="RoutingDiagram__DottedLine-sc-o1ook0-4 kkXINS"
         >
           <svg
-            class="RoutingDiagram__DotColor-sc-o1ook0-5 kgYqrO"
+            class="RoutingDiagram__DotColor-sc-o1ook0-5 bNPYOJ"
           >
             dot_line.svg
           </svg>
         </div>
         <div
-          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 gayll khxosM"
+          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 jEsMHW lofTYd"
         >
           <div
             class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
@@ -37,7 +37,7 @@ exports[`renders multi route 1`] = `
           width="100%"
         >
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 gayll bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jEsMHW bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -65,13 +65,13 @@ exports[`renders multi route 1`] = `
           class="RoutingDiagram__DottedLine-sc-o1ook0-4 kkXINS"
         >
           <svg
-            class="RoutingDiagram__DotColor-sc-o1ook0-5 kgYqrO"
+            class="RoutingDiagram__DotColor-sc-o1ook0-5 bNPYOJ"
           >
             dot_line.svg
           </svg>
         </div>
         <div
-          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 gayll khxosM"
+          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 jEsMHW lofTYd"
         >
           <div
             class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
@@ -86,7 +86,7 @@ exports[`renders multi route 1`] = `
           width="100%"
         >
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 gayll bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jEsMHW bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -100,7 +100,7 @@ exports[`renders multi route 1`] = `
             </div>
           </div>
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 gayll bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jEsMHW bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -124,7 +124,7 @@ exports[`renders multi route 1`] = `
 exports[`renders single route 1`] = `
 <DocumentFragment>
   <div
-    class="RoutingDiagram__Wrapper-sc-o1ook0-0 fUoVYh css-vurnku"
+    class="RoutingDiagram__Wrapper-sc-o1ook0-0 kWvQlz css-vurnku"
   >
     <div
       class="sc-bdnxRM Row-sc-nrd8cx-0 RoutingDiagram__RouteContainerRow-sc-o1ook0-1 lmTMKd itvFNV iiQQUx"
@@ -137,13 +137,13 @@ exports[`renders single route 1`] = `
           class="RoutingDiagram__DottedLine-sc-o1ook0-4 kkXINS"
         >
           <svg
-            class="RoutingDiagram__DotColor-sc-o1ook0-5 kgYqrO"
+            class="RoutingDiagram__DotColor-sc-o1ook0-5 bNPYOJ"
           >
             dot_line.svg
           </svg>
         </div>
         <div
-          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 gayll khxosM"
+          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 jEsMHW lofTYd"
         >
           <div
             class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
@@ -158,7 +158,7 @@ exports[`renders single route 1`] = `
           width="100%"
         >
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 gayll bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jEsMHW bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -182,7 +182,7 @@ exports[`renders single route 1`] = `
 exports[`renders when no routes are provided 1`] = `
 <DocumentFragment>
   <div
-    class="RoutingDiagram__Wrapper-sc-o1ook0-0 fUoVYh css-vurnku"
+    class="RoutingDiagram__Wrapper-sc-o1ook0-0 kWvQlz css-vurnku"
   />
 </DocumentFragment>
 `;
