@@ -24,4 +24,4 @@ jobs:
           repoToken: '${{ secrets.repo_token }}'
           firebaseServiceAccount: '${{ secrets.firebase_service_account }}'
           projectId: '${{ secrets.project_id }}'
-          channelId: ${{ channel_id }}
+          channelId: ${{ inputs.channel_id }}
