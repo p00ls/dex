@@ -22,8 +22,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-      - name: Display structure of downloaded files
-        run: ls -R
+          path: build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.repo_token }}'
