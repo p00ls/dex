@@ -35,7 +35,8 @@ jobs:
         with:
           path: |
             ${{ github.workspace }}/build
-          key: ${{ runner.os }}-dex-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+            ${{ github.workspace }}/firebase.json
+          key: ${{ runner.os }}-dex-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}-${{ hashFiles('firebase.json') }}
       - name: Build artifact
         run: yarn build
 
