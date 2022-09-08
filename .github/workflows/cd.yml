@@ -17,8 +17,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: yarn build
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/build
+          key: ${{ runner.os }}-dex-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.repo_token }}'
