@@ -1,0 +1,27 @@
+name: Deploy to k8s
+on:
+  workflow_call:
+    inputs:
+      channel_id:
+        description: channel id
+        required: false
+        type: string
+    secrets:
+      project_id:
+        required: true
+      firebase_service_account:
+        required: true
+      repo_token:
+        required: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn install && yarn build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.repo_token }}'
+          firebaseServiceAccount: '${{ secrets.firebase_service_account }}'
+          projectId: '${{ secrets.project_id }}'
+          channelId: ${{ channel_id }}

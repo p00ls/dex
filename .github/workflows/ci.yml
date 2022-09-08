@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: 14
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://npm.pkg.github.com
+          cache: 'yarn'
+          scope: '@p00ls'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --immutable --immutable-cache
+      - name: lint
+        run: yarn lint
+      - name: test
+        run: yarn test
+
+  deploy:
+    needs: [ build ]
+    if: github.ref != 'refs/heads/main'
+    uses: ./.github/workflows/cd.yml
+    secrets:
+      project_id: ${{ secrets.PROJECT_ID }}
+      firebase_service_account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRJ_ZZF_P_DEX_846E }}
+      repo_token: '${{ secrets.GITHUB_TOKEN }}'
+
+  deploy_prod:
+    needs: [ build ]
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/cd.yml
+    with:
+      channel_id: live
+    secrets:
+      project_id: ${{ secrets.PROJECT_ID }}
+      firebase_service_account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRJ_ZZF_P_DEX_846E }}
+      repo_token: '${{ secrets.GITHUB_TOKEN }}'
