@@ -30,14 +30,13 @@ jobs:
         run: yarn lint
       - name: Run tests
         run: yarn test
-      - name: Cache build
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ github.workspace }}/build
-          key: ${{ runner.os }}-dex-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
       - name: Build artifact
         run: yarn build
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
 
   deploy_preview:
     needs: [ build ]
