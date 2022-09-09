@@ -8,7 +8,11 @@ import { useActiveWeb3React } from './web3'
 
 type PartialTransactionResponse = Pick<TransactionResponse, 'hash' | 'v' | 'r' | 's'>
 
-const SUPPORTED_TRANSACTION_TYPES = [TransactionType.ADD_LIQUIDITY_V2_POOL, TransactionType.SWAP]
+const SUPPORTED_TRANSACTION_TYPES = [
+  TransactionType.ADD_LIQUIDITY_V2_POOL,
+  TransactionType.REMOVE_LIQUIDITY,
+  TransactionType.SWAP,
+]
 
 const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_KEY
 const firebaseEnabled = typeof FIREBASE_API_KEY !== 'undefined'
