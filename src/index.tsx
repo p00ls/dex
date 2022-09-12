@@ -20,7 +20,6 @@ import ListsUpdater from './state/lists/updater'
 import LogsUpdater from './state/logs/updater'
 import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
-import UserUpdater from './state/user/updater'
 import ThemeProvider, { ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
 
@@ -34,7 +33,6 @@ function Updaters() {
   return (
     <>
       <ListsUpdater />
-      <UserUpdater />
       <ApplicationUpdater />
       <TransactionUpdater />
       <MulticallUpdater />
