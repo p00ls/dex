@@ -63,12 +63,12 @@ function colors(): Colors {
     text4: '#B2B9D2',
 
     // backgrounds / greys
-    bg0: '#191B1F',
+    bg0: '#171717',
     bg1: '#111111',
-    bg2: '#2C2F36',
-    bg3: '#40444F',
-    bg4: '#565A69',
-    bg5: '#6C7284',
+    bg2: '#444',
+    bg3: '#444',
+    bg4: '#555555',
+    bg5: '#666666',
 
     //specialty colors
     modalBG: 'rgba(0,0,0,.425)',
