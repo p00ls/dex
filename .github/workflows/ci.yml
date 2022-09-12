@@ -43,7 +43,7 @@ jobs:
     if: github.ref != 'refs/heads/main'
     uses: ./.github/workflows/cd.yml
     with:
-      project_id: ${{ secrets.PROJECT_ID }}
+      project_id: prj-zzf-p-dex-846e
     secrets:
       firebase_service_account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRJ_ZZF_P_DEX_846E }}
       repo_token: '${{ secrets.GITHUB_TOKEN }}'
@@ -54,7 +54,7 @@ jobs:
     uses: ./.github/workflows/cd.yml
     with:
       channel_id: live
-      project_id: ${{ secrets.PROJECT_ID }}
+      project_id: prj-zzf-p-dex-846e
     secrets:
       firebase_service_account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRJ_ZZF_P_DEX_846E }}
       repo_token: '${{ secrets.GITHUB_TOKEN }}'
