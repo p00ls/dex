@@ -10,9 +10,7 @@ type PartialTransactionResponse = Pick<TransactionResponse, 'hash' | 'v' | 'r' |
 
 const SUPPORTED_TRANSACTION_TYPES = [
   TransactionType.ADD_LIQUIDITY_V2_POOL,
-  TransactionType.ADD_LIQUIDITY_V3_POOL,
-  TransactionType.CREATE_V3_POOL,
-  TransactionType.REMOVE_LIQUIDITY_V3,
+  TransactionType.REMOVE_LIQUIDITY,
   TransactionType.SWAP,
 ]
 

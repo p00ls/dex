@@ -7,17 +7,14 @@ import useENSName from '../../hooks/useENSName'
 import { VoteOption } from '../../state/governance/types'
 import {
   AddLiquidityV2PoolTransactionInfo,
-  AddLiquidityV3PoolTransactionInfo,
   ApproveTransactionInfo,
   ClaimTransactionInfo,
   CollectFeesTransactionInfo,
-  CreateV3PoolTransactionInfo,
   DelegateTransactionInfo,
   DepositLiquidityStakingTransactionInfo,
   ExactInputSwapTransactionInfo,
   ExactOutputSwapTransactionInfo,
-  MigrateV2LiquidityToV3TransactionInfo,
-  RemoveLiquidityV3TransactionInfo,
+  RemoveLiquidityTransactionInfo,
   SubmitProposalTransactionInfo,
   TransactionInfo,
   TransactionType,
@@ -157,32 +154,6 @@ function WithdrawLiquidityStakingSummary(_: { info: WithdrawLiquidityStakingTran
   return <Trans>Withdraw deposited liquidity</Trans>
 }
 
-function MigrateLiquidityToV3Summary({
-  info: { baseCurrencyId, quoteCurrencyId },
-}: {
-  info: MigrateV2LiquidityToV3TransactionInfo
-}) {
-  const baseCurrency = useCurrency(baseCurrencyId)
-  const quoteCurrency = useCurrency(quoteCurrencyId)
-
-  return (
-    <Trans>
-      Migrate {baseCurrency?.symbol}/{quoteCurrency?.symbol} liquidity to V3
-    </Trans>
-  )
-}
-
-function CreateV3PoolSummary({ info: { quoteCurrencyId, baseCurrencyId } }: { info: CreateV3PoolTransactionInfo }) {
-  const baseCurrency = useCurrency(baseCurrencyId)
-  const quoteCurrency = useCurrency(quoteCurrencyId)
-
-  return (
-    <Trans>
-      Create {baseCurrency?.symbol}/{quoteCurrency?.symbol} V3 pool
-    </Trans>
-  )
-}
-
 function CollectFeesSummary({ info: { currencyId0, currencyId1 } }: { info: CollectFeesTransactionInfo }) {
   const currency0 = useCurrency(currencyId0)
   const currency1 = useCurrency(currencyId1)
@@ -194,35 +165,16 @@ function CollectFeesSummary({ info: { currencyId0, currencyId1 } }: { info: Coll
   )
 }
 
-function RemoveLiquidityV3Summary({
+function RemoveLiquiditySummary({
   info: { baseCurrencyId, quoteCurrencyId, expectedAmountBaseRaw, expectedAmountQuoteRaw },
 }: {
-  info: RemoveLiquidityV3TransactionInfo
+  info: RemoveLiquidityTransactionInfo
 }) {
   return (
     <Trans>
       Remove{' '}
       <FormattedCurrencyAmountManaged rawAmount={expectedAmountBaseRaw} currencyId={baseCurrencyId} sigFigs={3} /> and{' '}
       <FormattedCurrencyAmountManaged rawAmount={expectedAmountQuoteRaw} currencyId={quoteCurrencyId} sigFigs={3} />
-    </Trans>
-  )
-}
-
-function AddLiquidityV3PoolSummary({
-  info: { createPool, quoteCurrencyId, baseCurrencyId },
-}: {
-  info: AddLiquidityV3PoolTransactionInfo
-}) {
-  const baseCurrency = useCurrency(baseCurrencyId)
-  const quoteCurrency = useCurrency(quoteCurrencyId)
-
-  return createPool ? (
-    <Trans>
-      Create pool and add {baseCurrency?.symbol}/{quoteCurrency?.symbol} V3 liquidity
-    </Trans>
-  ) : (
-    <Trans>
-      Add {baseCurrency?.symbol}/{quoteCurrency?.symbol} V3 liquidity
     </Trans>
   )
 }
@@ -281,9 +233,6 @@ function SwapSummary({ info }: { info: ExactInputSwapTransactionInfo | ExactOutp
 
 export function TransactionSummary({ info }: { info: TransactionInfo }) {
   switch (info.type) {
-    case TransactionType.ADD_LIQUIDITY_V3_POOL:
-      return <AddLiquidityV3PoolSummary info={info} />
-
     case TransactionType.ADD_LIQUIDITY_V2_POOL:
       return <AddLiquidityV2PoolSummary info={info} />
 
@@ -311,17 +260,11 @@ export function TransactionSummary({ info }: { info: TransactionInfo }) {
     case TransactionType.WRAP:
       return <WrapSummary info={info} />
 
-    case TransactionType.CREATE_V3_POOL:
-      return <CreateV3PoolSummary info={info} />
-
-    case TransactionType.MIGRATE_LIQUIDITY_V3:
-      return <MigrateLiquidityToV3Summary info={info} />
-
     case TransactionType.COLLECT_FEES:
       return <CollectFeesSummary info={info} />
 
-    case TransactionType.REMOVE_LIQUIDITY_V3:
-      return <RemoveLiquidityV3Summary info={info} />
+    case TransactionType.REMOVE_LIQUIDITY:
+      return <RemoveLiquiditySummary info={info} />
 
     case TransactionType.SUBMIT_PROPOSAL:
       return <SubmitProposalTransactionSummary info={info} />

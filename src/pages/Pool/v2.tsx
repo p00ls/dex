@@ -1,6 +1,5 @@
 import { Trans } from '@lingui/macro'
 import { Pair } from '@uniswap/v2-sdk'
-import { L2_CHAIN_IDS } from 'constants/chains'
 import JSBI from 'jsbi'
 import { useContext, useMemo } from 'react'
 import { ChevronsRight } from 'react-feather'
@@ -78,13 +77,9 @@ const EmptyProposals = styled.div`
   align-items: center;
 `
 
-const Layer2Prompt = styled(EmptyProposals)`
-  margin-top: 16px;
-`
-
 export default function Pool() {
   const theme = useContext(ThemeContext)
-  const { account, chainId } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
@@ -132,8 +127,6 @@ export default function Pool() {
     )
   })
 
-  const ON_L2 = chainId && L2_CHAIN_IDS.includes(chainId)
-
   return (
     <>
       <PageWrapper>
@@ -171,17 +164,7 @@ export default function Pool() {
           <CardNoise />
         </VoteCard>
 
-        {ON_L2 ? (
-          <AutoColumn gap="lg" justify="center">
-            <AutoColumn gap="md" style={{ width: '100%' }}>
-              <Layer2Prompt>
-                <ThemedText.Body color={theme.text3} textAlign="center">
-                  <Trans>V2 is not available on Layer 2. Switch to Layer 1 Ethereum.</Trans>
-                </ThemedText.Body>
-              </Layer2Prompt>
-            </AutoColumn>
-          </AutoColumn>
-        ) : (
+        {
           <AutoColumn gap="lg" justify="center">
             <AutoColumn gap="md" style={{ width: '100%' }}>
               <TitleRow style={{ marginTop: '1rem' }} padding={'0'}>
@@ -273,7 +256,7 @@ export default function Pool() {
               )}
             </AutoColumn>
           </AutoColumn>
-        )}
+        }
       </PageWrapper>
       <SwitchLocaleLink />
     </>

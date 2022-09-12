@@ -9,7 +9,6 @@ import { Text } from 'rebass'
 import { useShowClaimPopup, useToggleSelfClaimModal } from 'state/application/hooks'
 import { useUserHasAvailableClaim } from 'state/claim/hooks'
 import { useUserHasSubmittedClaim } from 'state/transactions/hooks'
-import { useDarkModeManager } from 'state/user/hooks'
 import { useETHBalances } from 'state/wallet/hooks'
 import styled from 'styled-components/macro'
 
@@ -247,8 +246,7 @@ export default function Header() {
   const { account, chainId } = useActiveWeb3React()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
-  const [darkMode] = useDarkModeManager()
-  const { white, black } = useTheme()
+  const { white } = useTheme()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -270,7 +268,7 @@ export default function Header() {
       </Modal>
       <Title href=".">
         <UniIcon>
-          <Logo fill={darkMode ? white : black} width="24px" height="100%" title="logo" />
+          <Logo fill={white} width="24px" height="100%" title="logo" />
         </UniIcon>
       </Title>
       <HeaderLinks>
@@ -279,7 +277,7 @@ export default function Header() {
         </StyledNavLink>
         <StyledNavLink
           id={`pool-nav-link`}
-          to={'/pool'}
+          to={'/pool/v2'}
           isActive={(match, { pathname }) =>
             Boolean(match) ||
             pathname.startsWith('/add') ||

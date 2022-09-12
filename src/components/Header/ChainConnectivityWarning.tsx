@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro'
-import { CHAIN_INFO, L2ChainInfo, SupportedChainId } from 'constants/chains'
+import { CHAIN_INFO, SupportedChainId } from 'constants/chains'
 import { useActiveWeb3React } from 'hooks/web3'
 import { AlertOctagon } from 'react-feather'
 import styled from 'styled-components/macro'
-import { ExternalLink, MEDIA_WIDTHS } from 'theme'
+import { MEDIA_WIDTHS } from 'theme'
 
 const BodyRow = styled.div`
   color: ${({ theme }) => theme.black};
@@ -11,10 +11,6 @@ const BodyRow = styled.div`
 `
 const CautionIcon = styled(AlertOctagon)`
   color: ${({ theme }) => theme.black};
-`
-const Link = styled(ExternalLink)`
-  color: ${({ theme }) => theme.black};
-  text-decoration: underline;
 `
 const TitleRow = styled.div`
   align-items: center;
@@ -62,14 +58,6 @@ export function ChainConnectivityWarning() {
         ) : (
           <Trans>You may have lost your network connection, or {label} might be down right now.</Trans>
         )}{' '}
-        {(info as L2ChainInfo).statusPage !== undefined && (
-          <span>
-            <Trans>Check network status</Trans>{' '}
-            <Link href={(info as L2ChainInfo).statusPage || ''}>
-              <Trans>here.</Trans>
-            </Link>
-          </span>
-        )}
       </BodyRow>
     </Wrapper>
   )

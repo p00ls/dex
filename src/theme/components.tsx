@@ -1,5 +1,5 @@
 import React, { HTMLProps } from 'react'
-import { ArrowLeft, ExternalLink as LinkIconFeather, Trash, X } from 'react-feather'
+import { ExternalLink as LinkIconFeather, Trash, X } from 'react-feather'
 import ReactGA from 'react-ga'
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components/macro'
@@ -227,17 +227,6 @@ const Spinner = styled.img`
   height: 16px;
 `
 
-const BackArrowLink = styled(StyledInternalLink)`
-  color: ${({ theme }) => theme.text1};
-`
-export function BackArrow({ to }: { to: string }) {
-  return (
-    <BackArrowLink to={to}>
-      <ArrowLeft />
-    </BackArrowLink>
-  )
-}
-
 export const CustomLightSpinner = styled(Spinner)<{ size: string }>`
   height: ${({ size }) => size};
   width: ${({ size }) => size};
@@ -246,18 +235,5 @@ export const CustomLightSpinner = styled(Spinner)<{ size: string }>`
 export const HideSmall = styled.span`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     display: none;
-  `};
-`
-
-export const HideExtraSmall = styled.span`
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    display: none;
-  `};
-`
-
-export const SmallOnly = styled.span`
-  display: none;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    display: block;
   `};
 `

@@ -27,12 +27,9 @@ export enum TransactionType {
   VOTE = 5,
   DELEGATE = 6,
   WRAP = 7,
-  CREATE_V3_POOL = 8,
-  ADD_LIQUIDITY_V3_POOL = 9,
   ADD_LIQUIDITY_V2_POOL = 10,
-  MIGRATE_LIQUIDITY_V3 = 11,
   COLLECT_FEES = 12,
-  REMOVE_LIQUIDITY_V3 = 13,
+  REMOVE_LIQUIDITY = 13,
   SUBMIT_PROPOSAL = 14,
 }
 
@@ -103,22 +100,6 @@ export interface ClaimTransactionInfo {
   uniAmountRaw?: string
 }
 
-export interface CreateV3PoolTransactionInfo {
-  type: TransactionType.CREATE_V3_POOL
-  baseCurrencyId: string
-  quoteCurrencyId: string
-}
-
-export interface AddLiquidityV3PoolTransactionInfo {
-  type: TransactionType.ADD_LIQUIDITY_V3_POOL
-  createPool: boolean
-  baseCurrencyId: string
-  quoteCurrencyId: string
-  feeAmount: number
-  expectedAmountBaseRaw: string
-  expectedAmountQuoteRaw: string
-}
-
 export interface AddLiquidityV2PoolTransactionInfo {
   type: TransactionType.ADD_LIQUIDITY_V2_POOL
   baseCurrencyId: string
@@ -127,21 +108,14 @@ export interface AddLiquidityV2PoolTransactionInfo {
   expectedAmountQuoteRaw: string
 }
 
-export interface MigrateV2LiquidityToV3TransactionInfo {
-  type: TransactionType.MIGRATE_LIQUIDITY_V3
-  baseCurrencyId: string
-  quoteCurrencyId: string
-  isFork: boolean
-}
-
 export interface CollectFeesTransactionInfo {
   type: TransactionType.COLLECT_FEES
   currencyId0: string
   currencyId1: string
 }
 
-export interface RemoveLiquidityV3TransactionInfo {
-  type: TransactionType.REMOVE_LIQUIDITY_V3
+export interface RemoveLiquidityTransactionInfo {
+  type: TransactionType.REMOVE_LIQUIDITY
   baseCurrencyId: string
   quoteCurrencyId: string
   expectedAmountBaseRaw: string
@@ -162,12 +136,9 @@ export type TransactionInfo =
   | DepositLiquidityStakingTransactionInfo
   | WithdrawLiquidityStakingTransactionInfo
   | WrapTransactionInfo
-  | CreateV3PoolTransactionInfo
-  | AddLiquidityV3PoolTransactionInfo
   | AddLiquidityV2PoolTransactionInfo
-  | MigrateV2LiquidityToV3TransactionInfo
   | CollectFeesTransactionInfo
-  | RemoveLiquidityV3TransactionInfo
+  | RemoveLiquidityTransactionInfo
   | SubmitProposalTransactionInfo
 
 export const addTransaction = createAction<{

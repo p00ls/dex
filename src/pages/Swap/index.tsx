@@ -1,9 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { LoadingOpacityContainer } from 'components/Loader/styled'
-import { NetworkAlert } from 'components/NetworkAlert/NetworkAlert'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import { AutoRouterLogo } from 'components/swap/RouterLabel'
 import SwapRoute from 'components/swap/SwapRoute'
@@ -16,7 +14,6 @@ import { ArrowDown, CheckCircle, HelpCircle, Info } from 'react-feather'
 import ReactGA from 'react-ga'
 import { RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
-import { V3TradeState } from 'state/routing/types'
 import styled, { ThemeContext } from 'styled-components/macro'
 
 import AddressInputPanel from '../../components/AddressInputPanel'
@@ -46,7 +43,6 @@ import { useERC20PermitFromTrade, UseERC20PermitState } from '../../hooks/useERC
 import useIsArgentWallet from '../../hooks/useIsArgentWallet'
 import { useIsSwapUnsupported } from '../../hooks/useIsSwapUnsupported'
 import { useSwapCallback } from '../../hooks/useSwapCallback'
-import useToggledVersion from '../../hooks/useToggledVersion'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
 import { useActiveWeb3React } from '../../hooks/web3'
@@ -61,7 +57,6 @@ import {
 import { useExpertModeManager } from '../../state/user/hooks'
 import { LinkStyledButton, ThemedText } from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
-import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
@@ -113,20 +108,16 @@ export default function Swap({ history }: RouteComponentProps) {
   // for expert mode
   const [isExpertMode] = useExpertModeManager()
 
-  // get version from the url
-  const toggledVersion = useToggledVersion()
-
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const {
-    v3Trade: { state: v3TradeState },
     bestTrade: trade,
     allowedSlippage,
     currencyBalances,
     parsedAmount,
     currencies,
     inputError: swapInputError,
-  } = useDerivedSwapInfo(toggledVersion)
+  } = useDerivedSwapInfo()
 
   const {
     wrapType,
@@ -150,14 +141,7 @@ export default function Swap({ history }: RouteComponentProps) {
     [independentField, parsedAmount, showWrap, trade]
   )
 
-  const [routeNotFound, routeIsLoading, routeIsSyncing] = useMemo(
-    () => [
-      trade instanceof V3Trade ? !trade?.swaps : !trade?.route,
-      V3TradeState.LOADING === v3TradeState,
-      V3TradeState.SYNCING === v3TradeState,
-    ],
-    [trade, v3TradeState]
-  )
+  const [routeNotFound, routeIsLoading, routeIsSyncing] = useMemo(() => [!trade?.route, false, false], [trade])
 
   const fiatValueInput = useUSDCValue(parsedAmounts[Field.INPUT])
   const fiatValueOutput = useUSDCValue(parsedAmounts[Field.OUTPUT])
@@ -189,7 +173,7 @@ export default function Swap({ history }: RouteComponentProps) {
   // modal and loading
   const [{ showConfirm, tradeToConfirm, swapErrorMessage, attemptingTxn, txHash }, setSwapState] = useState<{
     showConfirm: boolean
-    tradeToConfirm: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined
+    tradeToConfirm: V2Trade<Currency, Currency, TradeType> | undefined
     attemptingTxn: boolean
     swapErrorMessage: string | undefined
     txHash: string | undefined
@@ -239,10 +223,10 @@ export default function Swap({ history }: RouteComponentProps) {
       ReactGA.event({
         category: 'Swap',
         action: 'Approve',
-        label: [trade?.inputAmount.currency.symbol, toggledVersion].join('/'),
+        label: [trade?.inputAmount.currency.symbol, 'V2'].join('/'),
       })
     }
-  }, [approveCallback, gatherPermitSignature, signatureState, toggledVersion, trade?.inputAmount.currency.symbol])
+  }, [approveCallback, gatherPermitSignature, signatureState, trade?.inputAmount.currency.symbol])
 
   // check if user has gone through approval process, used to show two step buttons, reset on token change
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
@@ -287,12 +271,7 @@ export default function Swap({ history }: RouteComponentProps) {
               : (recipientAddress ?? recipient) === account
               ? 'Swap w/o Send + recipient'
               : 'Swap w/ Send',
-          label: [
-            trade?.inputAmount?.currency?.symbol,
-            trade?.outputAmount?.currency?.symbol,
-            getTradeVersion(trade),
-            'MH',
-          ].join('/'),
+          label: [trade?.inputAmount?.currency?.symbol, trade?.outputAmount?.currency?.symbol, 'V2', 'MH'].join('/'),
         })
       })
       .catch((error) => {
@@ -378,7 +357,6 @@ export default function Swap({ history }: RouteComponentProps) {
         onConfirm={handleConfirmTokenWarning}
         onDismiss={handleDismissTokenWarning}
       />
-      <NetworkAlert />
       <AppBody>
         <SwapHeader allowedSlippage={allowedSlippage} />
         <Wrapper id="swap-page">
@@ -475,11 +453,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   >
                     <AutoRow gap="4px" width="auto">
                       <AutoRouterLogo />
-                      <LoadingOpacityContainer $loading={routeIsSyncing}>
-                        {trade instanceof V3Trade && trade.swaps.length > 1 && (
-                          <ThemedText.Blue fontSize={14}>{trade.swaps.length} routes</ThemedText.Blue>
-                        )}
-                      </LoadingOpacityContainer>
+                      <LoadingOpacityContainer $loading={routeIsSyncing}></LoadingOpacityContainer>
                     </AutoRow>
                   </MouseoverTooltipContent>
                 </RowFixed>
