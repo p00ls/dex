@@ -4,21 +4,17 @@ import JSBI from 'jsbi'
 
 import { useCurrency, useToken } from '../../hooks/Tokens'
 import useENSName from '../../hooks/useENSName'
-import { VoteOption } from '../../state/governance/types'
 import {
   AddLiquidityV2PoolTransactionInfo,
   ApproveTransactionInfo,
   ClaimTransactionInfo,
   CollectFeesTransactionInfo,
-  DelegateTransactionInfo,
   DepositLiquidityStakingTransactionInfo,
   ExactInputSwapTransactionInfo,
   ExactOutputSwapTransactionInfo,
   RemoveLiquidityTransactionInfo,
-  SubmitProposalTransactionInfo,
   TransactionInfo,
   TransactionType,
-  VoteTransactionInfo,
   WithdrawLiquidityStakingTransactionInfo,
   WrapTransactionInfo,
 } from '../../state/transactions/actions'
@@ -77,54 +73,10 @@ function ClaimSummary({ info: { recipient, uniAmountRaw } }: { info: ClaimTransa
   )
 }
 
-function SubmitProposalTransactionSummary(_: { info: SubmitProposalTransactionInfo }) {
-  return <Trans>Submit new proposal</Trans>
-}
-
 function ApprovalSummary({ info }: { info: ApproveTransactionInfo }) {
   const token = useToken(info.tokenAddress)
 
   return <Trans>Approve {token?.symbol}</Trans>
-}
-
-function VoteSummary({ info }: { info: VoteTransactionInfo }) {
-  const proposalKey = `${info.governorAddress}/${info.proposalId}`
-  if (info.reason && info.reason.trim().length > 0) {
-    switch (info.decision) {
-      case VoteOption.For:
-        return <Trans>Vote for proposal {proposalKey}</Trans>
-      case VoteOption.Abstain:
-        return <Trans>Vote to abstain on proposal {proposalKey}</Trans>
-      case VoteOption.Against:
-        return <Trans>Vote against proposal {proposalKey}</Trans>
-    }
-  } else {
-    switch (info.decision) {
-      case VoteOption.For:
-        return (
-          <Trans>
-            Vote for proposal {proposalKey} with reason &quot;{info.reason}&quot;
-          </Trans>
-        )
-      case VoteOption.Abstain:
-        return (
-          <Trans>
-            Vote to abstain on proposal {proposalKey} with reason &quot;{info.reason}&quot;
-          </Trans>
-        )
-      case VoteOption.Against:
-        return (
-          <Trans>
-            Vote against proposal {proposalKey} with reason &quot;{info.reason}&quot;
-          </Trans>
-        )
-    }
-  }
-}
-
-function DelegateSummary({ info: { delegatee } }: { info: DelegateTransactionInfo }) {
-  const { ENSName } = useENSName(delegatee)
-  return <Trans>Delegate voting power to {ENSName ?? delegatee}</Trans>
 }
 
 function WrapSummary({ info: { currencyAmountRaw, unwrapped } }: { info: WrapTransactionInfo }) {
@@ -251,12 +203,6 @@ export function TransactionSummary({ info }: { info: TransactionInfo }) {
     case TransactionType.APPROVAL:
       return <ApprovalSummary info={info} />
 
-    case TransactionType.VOTE:
-      return <VoteSummary info={info} />
-
-    case TransactionType.DELEGATE:
-      return <DelegateSummary info={info} />
-
     case TransactionType.WRAP:
       return <WrapSummary info={info} />
 
@@ -265,8 +211,5 @@ export function TransactionSummary({ info }: { info: TransactionInfo }) {
 
     case TransactionType.REMOVE_LIQUIDITY:
       return <RemoveLiquiditySummary info={info} />
-
-    case TransactionType.SUBMIT_PROPOSAL:
-      return <SubmitProposalTransactionSummary info={info} />
   }
 }

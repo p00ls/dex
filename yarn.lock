@@ -4660,11 +4660,6 @@
     "@typescript-eslint/types" "4.30.0"
     eslint-visitor-keys "^2.0.0"
 
-"@uniswap/governance@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@uniswap/governance/-/governance-1.0.2.tgz"
-  integrity sha512-L7BzdI/asAINB2F6EvJuQcg5YhykNeEfZxJrn2RPIVvx+9A9u+opDuqnBK4SYnanrsr3UEX1NwWXwDHmyw2TjQ==
-
 "@uniswap/lib@1.1.1":
   version "1.1.1"
   resolved "https://registry.npmjs.org/@uniswap/lib/-/lib-1.1.1.tgz"

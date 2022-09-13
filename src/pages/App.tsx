@@ -1,7 +1,7 @@
 import Loader from 'components/Loader'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
-import { lazy, Suspense } from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Suspense } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
@@ -21,8 +21,6 @@ import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-
-const Vote = lazy(() => import('./Vote'))
 
 const AppWrapper = styled.div`
   display: flex;
@@ -79,10 +77,6 @@ export default function App() {
             <TopLevelModals />
             <Suspense fallback={<Loader />}>
               <Switch>
-                <Route strict path="/vote" component={Vote} />
-                <Route exact strict path="/create-proposal">
-                  <Redirect to="/vote/create-proposal" />
-                </Route>
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
                 <Route exact strict path="/uni" component={Earn} />
                 <Route exact strict path="/uni/:currencyIdA/:currencyIdB" component={Manage} />
