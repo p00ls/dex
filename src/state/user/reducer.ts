@@ -12,7 +12,6 @@ import {
   SerializedToken,
   updateArbitrumAlphaAcknowledged,
   updateHideClosedPositions,
-  updateMatchesDarkMode,
   updateOptimismAlphaAcknowledged,
   updateUserClientSideRouter,
   updateUserDeadline,
@@ -29,10 +28,8 @@ export interface UserState {
   // the timestamp of the last updateVersion action
   lastUpdateVersionTimestamp?: number
 
-  matchesDarkMode: boolean // whether the dark mode media query matches
   optimismAlphaAcknowledged: boolean
 
-  userDarkMode: boolean | null // the user's choice for dark mode or light mode
   userLocale: SupportedLocale | null
 
   userExpertMode: boolean
@@ -72,9 +69,7 @@ function pairKey(token0Address: string, token1Address: string) {
 
 export const initialState: UserState = {
   arbitrumAlphaAcknowledged: false,
-  matchesDarkMode: false,
   optimismAlphaAcknowledged: false,
-  userDarkMode: null,
   userExpertMode: false,
   userLocale: null,
   userClientSideRouter: false,
@@ -122,10 +117,6 @@ export default createReducer(initialState, (builder) =>
       }
 
       state.lastUpdateVersionTimestamp = currentTimestamp()
-    })
-    .addCase(updateMatchesDarkMode, (state, action) => {
-      state.matchesDarkMode = action.payload.matchesDarkMode
-      state.timestamp = currentTimestamp()
     })
     .addCase(updateArbitrumAlphaAcknowledged, (state, action) => {
       state.arbitrumAlphaAcknowledged = action.payload.arbitrumAlphaAcknowledged

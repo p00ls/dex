@@ -11,7 +11,6 @@ export interface Colors {
   text2: Color
   text3: Color
   text4: Color
-  text5: Color
 
   // backgrounds / greys
   bg0: Color
@@ -20,14 +19,12 @@ export interface Colors {
   bg3: Color
   bg4: Color
   bg5: Color
-  bg6: Color
 
   modalBG: Color
   advancedBG: Color
 
   //blues
   primary1: Color
-  primary2: Color
   primary3: Color
   primary4: Color
   primary5: Color
@@ -36,12 +33,9 @@ export interface Colors {
 
   // pinks
   secondary1: Color
-  secondary2: Color
-  secondary3: Color
 
   // other
   red1: Color
-  red2: Color
   red3: Color
   green1: Color
   yellow1: Color
@@ -49,8 +43,6 @@ export interface Colors {
   yellow3: Color
   blue1: Color
   blue2: Color
-
-  blue4: Color
 
   error: Color
   success: Color

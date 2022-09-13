@@ -61,16 +61,14 @@ function colors(): Colors {
     text2: '#C3C5CB',
     text3: '#8F96AC',
     text4: '#B2B9D2',
-    text5: '#2C2F36',
 
     // backgrounds / greys
-    bg0: '#191B1F',
-    bg1: '#212429',
-    bg2: '#2C2F36',
-    bg3: '#40444F',
-    bg4: '#565A69',
-    bg5: '#6C7284',
-    bg6: '#1A2028',
+    bg0: '#171717',
+    bg1: '#111111',
+    bg2: '#444',
+    bg3: '#444',
+    bg4: '#555555',
+    bg5: '#666666',
 
     //specialty colors
     modalBG: 'rgba(0,0,0,.425)',
@@ -78,7 +76,6 @@ function colors(): Colors {
 
     //primary colors
     primary1: '#2172E5',
-    primary2: '#3680E7',
     primary3: '#4D8FEA',
     primary4: '#376bad70',
     primary5: '#153d6f70',
@@ -88,12 +85,9 @@ function colors(): Colors {
 
     // secondary colors
     secondary1: '#2172E5',
-    secondary2: '#17000b26',
-    secondary3: '#17000b26',
 
     // other
     red1: '#FF4343',
-    red2: '#F82D3A',
     red3: '#D60000',
     green1: '#27AE60',
     yellow1: '#E3A507',
@@ -104,9 +98,6 @@ function colors(): Colors {
     error: '#FD4040',
     success: '#27AE60',
     warning: '#FF8F00',
-
-    // dont wanna forget these blue yet
-    blue4: '#153d6f70',
   }
 }
 
