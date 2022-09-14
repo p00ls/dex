@@ -1,6 +1,5 @@
 import { Trans } from '@lingui/macro'
 import { Pair } from '@uniswap/v2-sdk'
-import JSBI from 'jsbi'
 import { useContext, useMemo } from 'react'
 import { ChevronsRight } from 'react-feather'
 import { Link } from 'react-router-dom'
@@ -15,10 +14,8 @@ import FullPositionCard from '../../components/PositionCard'
 import { RowBetween, RowFixed } from '../../components/Row'
 import { Dots } from '../../components/swap/styleds'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
-import { BIG_INT_ZERO } from '../../constants/misc'
 import { useV2Pairs } from '../../hooks/useV2Pairs'
 import { useActiveWeb3React } from '../../hooks/web3'
-import { useStakingInfo } from '../../state/stake/hooks'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
 import { ExternalLink, HideSmall, ThemedText } from '../../theme'
@@ -105,22 +102,6 @@ export default function Pool() {
 
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
 
-  // show liquidity even if its deposited in rewards contract
-  const stakingInfo = useStakingInfo()
-  const stakingInfosWithBalance = stakingInfo?.filter((pool) =>
-    JSBI.greaterThan(pool.stakedAmount.quotient, BIG_INT_ZERO)
-  )
-  const stakingPairs = useV2Pairs(stakingInfosWithBalance?.map((stakingInfo) => stakingInfo.tokens))
-
-  // remove any pairs that also are included in pairs with stake in mining pool
-  const v2PairsWithoutStakedAmount = allV2PairsWithLiquidity.filter((v2Pair) => {
-    return (
-      stakingPairs
-        ?.map((stakingPair) => stakingPair[1])
-        .filter((stakingPair) => stakingPair?.liquidityToken.address === v2Pair.liquidityToken.address).length === 0
-    )
-  })
-
   return (
     <>
       <PageWrapper>
@@ -165,7 +146,7 @@ export default function Pool() {
                     </Dots>
                   </ThemedText.Body>
                 </EmptyProposals>
-              ) : allV2PairsWithLiquidity?.length > 0 || stakingPairs?.length > 0 ? (
+              ) : allV2PairsWithLiquidity?.length > 0 ? (
                 <>
                   <ButtonSecondary>
                     <RowBetween>
@@ -177,19 +158,9 @@ export default function Pool() {
                       </Trans>
                     </RowBetween>
                   </ButtonSecondary>
-                  {v2PairsWithoutStakedAmount.map((v2Pair) => (
+                  {allV2PairsWithLiquidity.map((v2Pair) => (
                     <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
                   ))}
-                  {stakingPairs.map(
-                    (stakingPair, i) =>
-                      stakingPair[1] && ( // skip pairs that arent loaded
-                        <FullPositionCard
-                          key={stakingInfosWithBalance[i].stakingRewardAddress}
-                          pair={stakingPair[1]}
-                          stakedBalance={stakingInfosWithBalance[i].stakedAmount}
-                        />
-                      )
-                  )}
                   <RowFixed justify="center" style={{ width: '100%' }}>
                     <ButtonOutlined
                       as={Link}
