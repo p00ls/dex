@@ -16,8 +16,6 @@ const STAKING_REWARDS_INTERFACE = new Interface(STAKING_REWARDS_ABI)
 
 export const STAKING_GENESIS = 1600387200
 
-export const REWARDS_DURATION_DAYS = 60
-
 export const STAKING_REWARDS_INFO: {
   [chainId: number]: {
     tokens: [Token, Token]

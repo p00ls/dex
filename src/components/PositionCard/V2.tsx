@@ -21,10 +21,10 @@ import { LightCard } from '../Card'
 import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
-import { CardNoise } from '../earn/styled'
 import { AutoRow, RowBetween, RowFixed } from '../Row'
 import { Dots } from '../swap/styleds'
 import { FixedHeightRow } from '.'
+import { CardNoise } from './styled'
 
 const StyledPositionCard = styled(LightCard)<{ bgColor: any }>`
   border: none;
