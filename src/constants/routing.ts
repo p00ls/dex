@@ -19,6 +19,7 @@ import {
   USDT,
   WBTC,
   WETH9_EXTENDED,
+  ZEROZERO,
 } from './tokens'
 
 type ChainTokenList = {
@@ -71,13 +72,19 @@ export const COMMON_BASES: ChainCurrencyList = {
     USDC,
     USDT,
     WBTC,
+    ZEROZERO[SupportedChainId.MAINNET],
     WETH9_EXTENDED[SupportedChainId.MAINNET],
   ],
   [SupportedChainId.RINKEBY]: [
     ExtendedEther.onChain(SupportedChainId.RINKEBY),
+    ZEROZERO[SupportedChainId.RINKEBY],
     WETH9_EXTENDED[SupportedChainId.RINKEBY],
   ],
-  [SupportedChainId.GOERLI]: [ExtendedEther.onChain(SupportedChainId.GOERLI), WETH9_EXTENDED[SupportedChainId.GOERLI]],
+  [SupportedChainId.GOERLI]: [
+    ExtendedEther.onChain(SupportedChainId.GOERLI),
+    ZEROZERO[SupportedChainId.GOERLI],
+    WETH9_EXTENDED[SupportedChainId.GOERLI],
+  ],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
