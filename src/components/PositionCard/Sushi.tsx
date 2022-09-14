@@ -12,10 +12,10 @@ import { ButtonEmpty } from '../Button'
 import { LightCard } from '../Card'
 import { AutoColumn } from '../Column'
 import DoubleCurrencyLogo from '../DoubleLogo'
-import { CardNoise } from '../earn/styled'
 import { AutoRow, RowFixed } from '../Row'
 import { Dots } from '../swap/styleds'
 import { FixedHeightRow } from '.'
+import { CardNoise } from './styled'
 
 const StyledPositionCard = styled(LightCard)<{ bgColor: any }>`
   border: none;
