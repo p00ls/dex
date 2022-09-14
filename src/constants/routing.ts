@@ -73,16 +73,11 @@ export const COMMON_BASES: ChainCurrencyList = {
     WBTC,
     WETH9_EXTENDED[SupportedChainId.MAINNET],
   ],
-  [SupportedChainId.ROPSTEN]: [
-    ExtendedEther.onChain(SupportedChainId.ROPSTEN),
-    WETH9_EXTENDED[SupportedChainId.ROPSTEN],
-  ],
   [SupportedChainId.RINKEBY]: [
     ExtendedEther.onChain(SupportedChainId.RINKEBY),
     WETH9_EXTENDED[SupportedChainId.RINKEBY],
   ],
   [SupportedChainId.GOERLI]: [ExtendedEther.onChain(SupportedChainId.GOERLI), WETH9_EXTENDED[SupportedChainId.GOERLI]],
-  [SupportedChainId.KOVAN]: [ExtendedEther.onChain(SupportedChainId.KOVAN), WETH9_EXTENDED[SupportedChainId.KOVAN]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

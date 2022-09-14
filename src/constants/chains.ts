@@ -2,27 +2,17 @@ import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
 
 export enum SupportedChainId {
   MAINNET = 1,
-  ROPSTEN = 3,
   RINKEBY = 4,
   GOERLI = 5,
-  KOVAN = 42,
 }
 
 export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.MAINNET,
-  SupportedChainId.ROPSTEN,
   SupportedChainId.RINKEBY,
   SupportedChainId.GOERLI,
-  SupportedChainId.KOVAN,
 ]
 
-export const L1_CHAIN_IDS = [
-  SupportedChainId.MAINNET,
-  SupportedChainId.ROPSTEN,
-  SupportedChainId.RINKEBY,
-  SupportedChainId.GOERLI,
-  SupportedChainId.KOVAN,
-] as const
+export const L1_CHAIN_IDS = [SupportedChainId.MAINNET, SupportedChainId.RINKEBY, SupportedChainId.GOERLI] as const
 
 export interface L1ChainInfo {
   readonly blockWaitMsBeforeWarning?: number
@@ -56,20 +46,6 @@ export const CHAIN_INFO: ChainInfo = {
     infoLink: 'https://info.uniswap.org/#/',
     label: 'Rinkeby',
     nativeCurrency: { name: 'Rinkeby ETH', symbol: 'rinkETH', decimals: 18 },
-  },
-  [SupportedChainId.ROPSTEN]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://ropsten.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
-    label: 'Ropsten',
-    nativeCurrency: { name: 'Ropsten ETH', symbol: 'ropETH', decimals: 18 },
-  },
-  [SupportedChainId.KOVAN]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://kovan.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
-    label: 'Kovan',
-    nativeCurrency: { name: 'Kovan ETH', symbol: 'kovETH', decimals: 18 },
   },
   [SupportedChainId.GOERLI]: {
     docs: 'https://docs.uniswap.org/',
