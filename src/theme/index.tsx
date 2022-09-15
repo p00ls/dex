@@ -75,10 +75,10 @@ function colors(): Colors {
     advancedBG: 'rgba(0,0,0,0.1)',
 
     //primary colors
-    primary1: '#2172E5',
+    primary1: '#475FF7',
     primary3: '#4D8FEA',
     primary4: '#376bad70',
-    primary5: '#153d6f70',
+    primary5: 'rgba(71, 95, 247, 0.25)',
 
     // color text
     primaryText1: '#5090ea',
@@ -87,17 +87,17 @@ function colors(): Colors {
     secondary1: '#2172E5',
 
     // other
-    red1: '#FF4343',
+    red1: '#FF4C01',
     red3: '#D60000',
-    green1: '#27AE60',
-    yellow1: '#E3A507',
+    green1: '#B9B51F',
+    yellow1: '#EEC655',
     yellow2: '#FF8F00',
     yellow3: '#F3B71E',
-    blue1: '#2172E5',
+    blue1: '#475FF7',
     blue2: '#5199FF',
-    error: '#FD4040',
-    success: '#27AE60',
-    warning: '#FF8F00',
+    error: '#FF4C01',
+    success: '#B9B51F',
+    warning: '#EEC655',
   }
 }
 
