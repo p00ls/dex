@@ -4,7 +4,6 @@ import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import JSBI from 'jsbi'
 import { useMemo, useState } from 'react'
 
-import { DAI, USDC } from '../constants/tokens'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useEIP2612Contract } from './useContract'
 import useIsArgentWallet from './useIsArgentWallet'
@@ -32,16 +31,9 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  1: {
-    [USDC.address]: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
-    [DAI.address]: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-  },
-  4: {
-    '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735': { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-  },
-  3: {
-    '0x07865c6E87B9F70255377e024ace6630C1Eaa37F': { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
-  },
+  1: {},
+  4: {},
+  3: {},
   5: {},
   42: {},
 }

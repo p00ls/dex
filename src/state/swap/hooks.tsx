@@ -8,6 +8,7 @@ import { ParsedQs } from 'qs'
 import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 
+import { ZEROZERO_SYMBOL } from '../../constants/tokens'
 import { useCurrency } from '../../hooks/Tokens'
 import useENS from '../../hooks/useENS'
 import useParsedQueryString from '../../hooks/useParsedQueryString'
@@ -204,6 +205,7 @@ function parseCurrencyFromURLParameter(urlParam: any): string {
     const valid = isAddress(urlParam)
     if (valid) return valid
     if (urlParam.toUpperCase() === 'ETH') return 'ETH'
+    if (urlParam.toUpperCase() === ZEROZERO_SYMBOL) return ZEROZERO_SYMBOL
   }
   return ''
 }
@@ -232,7 +234,7 @@ export function queryParametersToSwapState(parsedQs: ParsedQs): SwapState {
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   if (inputCurrency === '' && outputCurrency === '') {
     // default to ETH input
-    inputCurrency = 'ETH'
+    inputCurrency = ZEROZERO_SYMBOL
   } else if (inputCurrency === outputCurrency) {
     // clear output if identical
     outputCurrency = ''

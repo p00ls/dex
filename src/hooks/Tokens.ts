@@ -5,13 +5,13 @@ import { SupportedChainId } from 'constants/chains'
 import { useMemo } from 'react'
 
 import { createTokenFilterFunction } from '../components/SearchModal/filtering'
-import { ExtendedEther, WETH9_EXTENDED } from '../constants/tokens'
+import { ExtendedEther, WETH9_EXTENDED, ZEROZERO, ZEROZERO_SYMBOL } from '../constants/tokens'
 import { useAllLists, useCombinedActiveList, useInactiveListUrls } from '../state/lists/hooks'
+import { TokenAddressMap, useUnsupportedTokenList } from '../state/lists/hooks'
 import { WrappedTokenInfo } from '../state/lists/wrappedTokenInfo'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import { useUserAddedTokens } from '../state/user/hooks'
 import { isAddress } from '../utils'
-import { TokenAddressMap, useUnsupportedTokenList } from './../state/lists/hooks'
 import { useBytes32TokenContract, useTokenContract } from './useContract'
 import { useActiveWeb3React } from './web3'
 
@@ -183,7 +183,10 @@ export function useToken(tokenAddress?: string | null): Token | undefined | null
 export function useCurrency(currencyId: string | null | undefined): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
   const isETH = currencyId?.toUpperCase() === 'ETH'
-  const token = useToken(isETH ? undefined : currencyId)
+  const isZeroZero = currencyId?.toUpperCase() === ZEROZERO_SYMBOL
+  const token = useToken(
+    isETH ? undefined : isZeroZero ? ZEROZERO[chainId ?? SupportedChainId.MAINNET].address : currencyId
+  )
   const extendedEther = useMemo(
     () =>
       chainId

@@ -186,7 +186,7 @@ export default function CurrencyInputPanel({
   id,
   showCommonBases,
   showCurrencyAmount,
-  disableNonToken,
+  disableNonToken = true,
   renderBalance,
   fiatValue,
   priceImpact,
