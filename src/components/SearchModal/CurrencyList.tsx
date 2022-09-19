@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro'
-import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { LightGreyCard } from 'components/Card'
 import QuestionHelper from 'components/QuestionHelper'
 import useTheme from 'hooks/useTheme'
@@ -21,7 +21,6 @@ import CurrencyLogo from '../CurrencyLogo'
 import Loader from '../Loader'
 import { RowBetween, RowFixed } from '../Row'
 import { MouseoverTooltip } from '../Tooltip'
-import ImportRow from './ImportRow'
 import { MenuItem } from './styleds'
 
 function currencyKey(currency: Currency): string {
@@ -192,8 +191,6 @@ export default function CurrencyList({
   onCurrencySelect,
   otherCurrency,
   fixedListRef,
-  showImportView,
-  setImportToken,
   showCurrencyAmount,
 }: {
   height: number
@@ -203,8 +200,6 @@ export default function CurrencyList({
   onCurrencySelect: (currency: Currency) => void
   otherCurrency?: Currency | null
   fixedListRef?: MutableRefObject<FixedSizeList | undefined>
-  showImportView: () => void
-  setImportToken: (token: Token) => void
   showCurrencyAmount?: boolean
 }) {
   const itemData: (Currency | BreakLine)[] = useMemo(() => {
@@ -228,15 +223,7 @@ export default function CurrencyList({
       const otherSelected = Boolean(currency && otherCurrency && otherCurrency.equals(currency))
       const handleSelect = () => currency && onCurrencySelect(currency)
 
-      const token = currency?.wrapped
-
-      const showImport = index > currencies.length
-
-      if (showImport && token) {
-        return (
-          <ImportRow style={style} token={token} showImportView={showImportView} setImportToken={setImportToken} dim />
-        )
-      } else if (currency) {
+      if (currency) {
         return (
           <CurrencyRow
             style={style}
@@ -251,15 +238,7 @@ export default function CurrencyList({
         return null
       }
     },
-    [
-      currencies.length,
-      onCurrencySelect,
-      otherCurrency,
-      selectedCurrency,
-      setImportToken,
-      showImportView,
-      showCurrencyAmount,
-    ]
+    [onCurrencySelect, otherCurrency, selectedCurrency, showCurrencyAmount]
   )
 
   const itemKey = useCallback((index: number, data: typeof itemData) => {

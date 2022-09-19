@@ -6,7 +6,6 @@ import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useTheme from 'hooks/useTheme'
 import useToggle from 'hooks/useToggle'
 import { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Edit } from 'react-feather'
 import ReactGA from 'react-ga'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FixedSizeList } from 'react-window'
@@ -16,14 +15,13 @@ import styled from 'styled-components/macro'
 import { ExtendedEther } from '../../constants/tokens'
 import { useAllTokens, useIsUserAddedToken, useSearchInactiveTokenLists, useToken } from '../../hooks/Tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
-import { ButtonText, CloseIcon, IconWrapper, ThemedText } from '../../theme'
+import { CloseIcon, ThemedText } from '../../theme'
 import { isAddress } from '../../utils'
 import Column from '../Column'
-import Row, { RowBetween, RowFixed } from '../Row'
+import Row, { RowBetween } from '../Row'
 import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import { filterTokens, useSortedTokensByQuery } from './filtering'
-import ImportRow from './ImportRow'
 import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
 
@@ -52,9 +50,6 @@ interface CurrencySearchProps {
   showCommonBases?: boolean
   showCurrencyAmount?: boolean
   disableNonToken?: boolean
-  showManageView: () => void
-  showImportView: () => void
-  setImportToken: (token: Token) => void
 }
 
 export function CurrencySearch({
@@ -66,9 +61,6 @@ export function CurrencySearch({
   disableNonToken,
   onDismiss,
   isOpen,
-  showManageView,
-  showImportView,
-  setImportToken,
 }: CurrencySearchProps) {
   const { chainId } = useActiveWeb3React()
   const theme = useTheme()
@@ -200,9 +192,7 @@ export function CurrencySearch({
       </PaddedColumn>
       <Separator />
       {searchToken && !searchTokenIsAdded ? (
-        <Column style={{ padding: '20px 0', height: '100%' }}>
-          <ImportRow token={searchToken} showImportView={showImportView} setImportToken={setImportToken} />
-        </Column>
+        <Column style={{ padding: '20px 0', height: '100%' }}>Not found?</Column>
       ) : filteredSortedTokens?.length > 0 || filteredInactiveTokens?.length > 0 ? (
         <div style={{ flex: '1' }}>
           <AutoSizer disableWidth>
@@ -215,8 +205,6 @@ export function CurrencySearch({
                 otherCurrency={otherSelectedCurrency}
                 selectedCurrency={selectedCurrency}
                 fixedListRef={fixedList}
-                showImportView={showImportView}
-                setImportToken={setImportToken}
                 showCurrencyAmount={showCurrencyAmount}
               />
             )}
@@ -230,18 +218,7 @@ export function CurrencySearch({
         </Column>
       )}
       <Footer>
-        <Row justify="center">
-          <ButtonText onClick={showManageView} color={theme.primary1} className="list-token-manage-button">
-            <RowFixed>
-              <IconWrapper size="16px" marginRight="6px" stroke={theme.primaryText1}>
-                <Edit />
-              </IconWrapper>
-              <ThemedText.Main color={theme.primaryText1}>
-                <Trans>Manage Token Lists</Trans>
-              </ThemedText.Main>
-            </RowFixed>
-          </ButtonText>
-        </Row>
+        <Row justify="center"></Row>
       </Footer>
     </ContentWrapper>
   )
