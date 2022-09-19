@@ -136,19 +136,6 @@ export function PrivacyPolicy() {
               </RowBetween>
             </ExternalLink>
           </StyledExternalCard>
-          <StyledExternalCard>
-            <ExternalLink href={'https://uniswap.org/disclaimer/'}>
-              <RowBetween>
-                <AutoRow gap="4px">
-                  <Info size={20} />
-                  <ThemedText.Main fontSize={14} color={'primaryText1'}>
-                    <Trans>Protocol Disclaimer</Trans>
-                  </ThemedText.Main>
-                </AutoRow>
-                <StyledLinkOut size={20} />
-              </RowBetween>
-            </ExternalLink>
-          </StyledExternalCard>
         </AutoColumn>
         <ThemedText.Main fontSize={14}>
           <Trans>This app uses the following third-party APIs:</Trans>

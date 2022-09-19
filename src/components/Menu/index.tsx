@@ -5,7 +5,7 @@ import { LOCALE_LABEL, SUPPORTED_LOCALES, SupportedLocale } from 'constants/loca
 import { useActiveLocale } from 'hooks/useActiveLocale'
 import { useLocationLinkProps } from 'hooks/useLocationLinkProps'
 import React, { useEffect, useRef, useState } from 'react'
-import { BookOpen, Check, ChevronLeft, Coffee, FileText, Globe, HelpCircle, Info, MessageCircle } from 'react-feather'
+import { Check, ChevronLeft, FileText, Globe, Info } from 'react-feather'
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components/macro'
 
@@ -221,36 +221,12 @@ export default function Menu() {
                       </div>
                       <Info opacity={0.6} size={16} />
                     </MenuItem>
-                    <MenuItem href="https://help.uniswap.org/">
-                      <div>
-                        <Trans>Help Center</Trans>
-                      </div>
-                      <HelpCircle opacity={0.6} size={16} />
-                    </MenuItem>
-                    <MenuItem href="https://uniswap.canny.io/feature-requests">
-                      <div>
-                        <Trans>Request Features</Trans>
-                      </div>
-                      <Coffee opacity={0.6} size={16} />
-                    </MenuItem>
-                    <MenuItem href="https://discord.gg/FCfyBSbCU5">
-                      <div>
-                        <Trans>Discord</Trans>
-                      </div>
-                      <MessageCircle opacity={0.6} size={16} />
-                    </MenuItem>
                     <ToggleMenuItem onClick={() => setMenu('lang')}>
                       <div>
                         <Trans>Language</Trans>
                       </div>
                       <Globe opacity={0.6} size={16} />
                     </ToggleMenuItem>
-                    <MenuItem href="https://docs.uniswap.org/">
-                      <div>
-                        <Trans>Docs</Trans>
-                      </div>
-                      <BookOpen opacity={0.6} size={16} />
-                    </MenuItem>
                     <ToggleMenuItem onClick={() => togglePrivacyPolicy()}>
                       <div>
                         <Trans>Legal & Privacy</Trans>
