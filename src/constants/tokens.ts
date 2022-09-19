@@ -13,7 +13,7 @@ export const ZEROZERO: { [chainId: number]: Token } = {
   ),
   [SupportedChainId.RINKEBY]: new Token(
     SupportedChainId.RINKEBY,
-    '0x4346cd535056593f184f655025cdb536b35b662f',
+    '0x3fae7fc3361aea910dd5956fa7ba47f0c0231b7d',
     18,
     ZEROZERO_SYMBOL,
     '00'
