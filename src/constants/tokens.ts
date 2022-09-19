@@ -2,26 +2,27 @@ import { Ether, Token } from '@uniswap/sdk-core'
 
 import { SupportedChainId } from './chains'
 
+export const ZEROZERO_SYMBOL = '00'
 export const ZEROZERO: { [chainId: number]: Token } = {
   [SupportedChainId.MAINNET]: new Token(
     SupportedChainId.MAINNET,
     '0x881ba05de1e78f549cc63a8f6cabb1d4ad32250d',
     18,
-    '00',
+    ZEROZERO_SYMBOL,
     '00'
   ),
   [SupportedChainId.RINKEBY]: new Token(
     SupportedChainId.RINKEBY,
     '0x4346cd535056593f184f655025cdb536b35b662f',
     18,
-    '00',
+    ZEROZERO_SYMBOL,
     '00'
   ),
   [SupportedChainId.GOERLI]: new Token(
     SupportedChainId.GOERLI,
     '0xb794f5ea0ba39494ce839613fffba74279579268',
     18,
-    '00',
+    ZEROZERO_SYMBOL,
     '00'
   ),
 }
