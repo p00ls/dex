@@ -96,7 +96,7 @@ export default function V2PositionCard({ pair, border, stakedBalance }: Position
           <RowFixed gap="8px">
             <ButtonEmpty
               padding="6px 8px"
-              $borderRadius="12px"
+              $borderRadius="8px"
               width="fit-content"
               onClick={() => setShowMore(!showMore)}
             >

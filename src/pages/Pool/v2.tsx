@@ -45,7 +45,7 @@ const ButtonRow = styled(RowFixed)`
 
 const ResponsiveButtonPrimary = styled(ButtonPrimary)`
   width: fit-content;
-  border-radius: 12px;
+  border-radius: 8px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 48%;
   `};
@@ -61,7 +61,7 @@ const ResponsiveButtonSecondary = styled(ButtonSecondary)`
 const EmptyProposals = styled.div`
   border: 1px solid ${({ theme }) => theme.text4};
   padding: 16px 12px;
-  border-radius: 12px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +169,7 @@ export default function Pool() {
                       style={{
                         padding: '8px 16px',
                         margin: '0 4px',
-                        borderRadius: '12px',
+                        borderRadius: '8px',
                         width: 'fit-content',
                         fontSize: '14px',
                       }}

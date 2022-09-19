@@ -26,8 +26,8 @@ const Section = styled(AutoColumn)<{ inline?: boolean }>`
 `
 
 const BottomSection = styled(Section)`
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 `
 
 const ConfirmedIcon = styled(ColumnCenter)<{ inline?: boolean }>`

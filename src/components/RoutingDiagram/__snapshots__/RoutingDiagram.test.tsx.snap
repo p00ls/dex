@@ -22,7 +22,7 @@ exports[`renders multi route 1`] = `
           </svg>
         </div>
         <div
-          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 jWRMJu jWRSiV"
+          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 cpAagS kPvCaB"
         >
           <div
             class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
@@ -37,7 +37,7 @@ exports[`renders multi route 1`] = `
           width="100%"
         >
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jWRMJu bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 cpAagS bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -71,7 +71,7 @@ exports[`renders multi route 1`] = `
           </svg>
         </div>
         <div
-          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 jWRMJu jWRSiV"
+          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 cpAagS kPvCaB"
         >
           <div
             class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
@@ -86,7 +86,7 @@ exports[`renders multi route 1`] = `
           width="100%"
         >
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jWRMJu bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 cpAagS bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -100,7 +100,7 @@ exports[`renders multi route 1`] = `
             </div>
           </div>
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jWRMJu bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 cpAagS bRJvWg"
           >
             <div
               class="css-1t7xebc"
@@ -143,7 +143,7 @@ exports[`renders single route 1`] = `
           </svg>
         </div>
         <div
-          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 jWRMJu jWRSiV"
+          class="Badge-sc-1mhw5si-0 RoutingDiagram__OpaqueBadge-sc-o1ook0-6 cpAagS kPvCaB"
         >
           <div
             class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
@@ -158,7 +158,7 @@ exports[`renders single route 1`] = `
           width="100%"
         >
           <div
-            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 jWRMJu bRJvWg"
+            class="Badge-sc-1mhw5si-0 RoutingDiagram__PoolBadge-sc-o1ook0-3 cpAagS bRJvWg"
           >
             <div
               class="css-1t7xebc"

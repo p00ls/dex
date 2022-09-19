@@ -80,14 +80,14 @@ const HeaderLinks = styled(Row)`
   background-color: ${({ theme }) => theme.bg0};
   width: fit-content;
   padding: 4px;
-  border-radius: 16px;
+  border-radius: 8px;
   display: grid;
   grid-auto-flow: column;
   grid-gap: 10px;
   overflow: auto;
   align-items: center;
   ${({ theme }) => theme.mediaWidth.upToLarge`
-    justify-self: start;  
+    justify-self: start;
     `};
   ${({ theme }) => theme.mediaWidth.upToMedium`
     justify-self: center;
@@ -112,9 +112,10 @@ const AccountElement = styled.div<{ active: boolean }>`
   flex-direction: row;
   align-items: center;
   background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg1)};
-  border-radius: 12px;
+  border-radius: 8px;
   white-space: nowrap;
   width: 100%;
+  font-size: 14px;
 
   :focus {
     border: 1px solid blue;
@@ -133,6 +134,7 @@ const Title = styled.a`
   pointer-events: auto;
   justify-self: flex-start;
   margin-right: 12px;
+  margin-left: 12px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     justify-self: center;
   `};
@@ -152,19 +154,19 @@ const StyledNavLink = styled(NavLink).attrs({
 })`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: left;
-  border-radius: 3rem;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
   color: ${({ theme }) => theme.text2};
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 500;
   padding: 8px 12px;
   word-break: break-word;
   overflow: hidden;
   white-space: nowrap;
   &.${activeClassName} {
-    border-radius: 12px;
+    border-radius: 5px;
     font-weight: 600;
     justify-content: center;
     color: ${({ theme }) => theme.text1};

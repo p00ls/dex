@@ -22,7 +22,7 @@ import { SwapShowAcceptChanges, TruncatedText } from './styleds'
 
 const ArrowWrapper = styled.div`
   padding: 4px;
-  border-radius: 12px;
+  border-radius: 8px;
   height: 32px;
   width: 32px;
   position: relative;
@@ -139,7 +139,7 @@ export default function SwapModalHeader({
               </ThemedText.Main>
             </RowFixed>
             <ButtonPrimary
-              style={{ padding: '.5rem', width: 'fit-content', fontSize: '0.825rem', borderRadius: '12px' }}
+              style={{ padding: '.5rem', width: 'fit-content', fontSize: '0.825rem', borderRadius: '8px' }}
               onClick={onAcceptChanges}
             >
               <Trans>Accept</Trans>

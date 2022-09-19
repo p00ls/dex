@@ -60,13 +60,13 @@ function colors(): Colors {
     text1: '#FFFFFF',
     text2: '#C3C5CB',
     text3: '#8F96AC',
-    text4: '#B2B9D2',
+    text4: '#AEB6EB',
 
     // backgrounds / greys
     bg0: '#171717',
     bg1: '#111111',
-    bg2: '#444',
-    bg3: '#444',
+    bg2: '#222222',
+    bg3: '#333333',
     bg4: '#555555',
     bg5: '#666666',
 
@@ -77,18 +77,18 @@ function colors(): Colors {
     //primary colors
     primary1: '#475FF7',
     primary3: '#4D8FEA',
-    primary4: '#376bad70',
+    primary4: '#376bad',
     primary5: 'rgba(71, 95, 247, 0.25)',
 
     // color text
-    primaryText1: '#5090ea',
+    primaryText1: '#6F80F2',
 
     // secondary colors
     secondary1: '#2172E5',
 
     // other
     red1: '#FF4C01',
-    red3: '#D60000',
+    red3: '#FF75BF',
     green1: '#B9B51F',
     yellow1: '#EEC655',
     yellow2: '#FF8F00',
@@ -200,6 +200,6 @@ html {
 }
 
 a {
- color: ${({ theme }) => theme.blue1}; 
+ color: ${({ theme }) => theme.blue1};
 }
 `
