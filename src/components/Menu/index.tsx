@@ -215,7 +215,7 @@ export default function Menu() {
               default:
                 return (
                   <MenuFlyout>
-                    <MenuItem href="https://uniswap.org/">
+                    <MenuItem href="https://www.zeroze.ro/">
                       <div>
                         <Trans>About</Trans>
                       </div>
