@@ -2,13 +2,11 @@ import { Trans } from '@lingui/macro'
 import { Token } from '@uniswap/sdk-core'
 import Badge, { BadgeVariant } from 'components/Badge'
 import { transparentize } from 'polished'
-import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components/macro'
 
 import { useColor } from '../../hooks/useColor'
 import { unwrappedToken } from '../../utils/unwrappedToken'
-import { ButtonEmpty } from '../Button'
 import { LightCard } from '../Card'
 import { AutoColumn } from '../Column'
 import DoubleCurrencyLogo from '../DoubleLogo'
@@ -32,7 +30,7 @@ interface PositionCardProps {
   border?: string
 }
 
-export default function SushiPositionCard({ tokenA, tokenB, liquidityToken, border }: PositionCardProps) {
+export default function SushiPositionCard({ tokenA, tokenB, border }: PositionCardProps) {
   const currency0 = unwrappedToken(tokenA)
   const currency1 = unwrappedToken(tokenB)
 
@@ -57,17 +55,7 @@ export default function SushiPositionCard({ tokenA, tokenB, liquidityToken, bord
 
             <Badge variant={BadgeVariant.WARNING}>Sushi</Badge>
           </AutoRow>
-          <RowFixed gap="8px">
-            <ButtonEmpty
-              padding="0px 35px 0px 0px"
-              $borderRadius="8px"
-              width="fit-content"
-              as={Link}
-              to={`/migrate/v2/${liquidityToken.address}`}
-            >
-              <Trans>Migrate</Trans>
-            </ButtonEmpty>
-          </RowFixed>
+          <RowFixed gap="8px"></RowFixed>
         </FixedHeightRow>
       </AutoColumn>
     </StyledPositionCard>
