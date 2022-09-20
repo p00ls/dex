@@ -1,14 +1,14 @@
 describe('Remove Liquidity', () => {
-  it('eth remove', () => {
-    cy.visit('/remove/v2/ETH/0xF9bA5210F91D0474bd1e1DcDAeC4C58E359AaD85')
-    cy.get('#remove-liquidity-tokena-symbol').should('contain.text', 'ETH')
+  it('00 remove', () => {
+    cy.visit('/remove/v2/00/0xF9bA5210F91D0474bd1e1DcDAeC4C58E359AaD85')
+    cy.get('#remove-liquidity-tokena-symbol').should('contain.text', '00')
     cy.get('#remove-liquidity-tokenb-symbol').should('contain.text', 'MKR')
   })
 
-  it('eth remove swap order', () => {
-    cy.visit('/remove/v2/0xF9bA5210F91D0474bd1e1DcDAeC4C58E359AaD85/ETH')
+  it('00 remove swap order', () => {
+    cy.visit('/remove/v2/0xF9bA5210F91D0474bd1e1DcDAeC4C58E359AaD85/00')
     cy.get('#remove-liquidity-tokena-symbol').should('contain.text', 'MKR')
-    cy.get('#remove-liquidity-tokenb-symbol').should('contain.text', 'ETH')
+    cy.get('#remove-liquidity-tokenb-symbol').should('contain.text', '00')
   })
 
   it('loads the two correct tokens', () => {

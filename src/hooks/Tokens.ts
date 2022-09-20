@@ -5,7 +5,7 @@ import { SupportedChainId } from 'constants/chains'
 import { useMemo } from 'react'
 
 import { createTokenFilterFunction } from '../components/SearchModal/filtering'
-import { ExtendedEther, WETH9_EXTENDED, ZEROZERO, ZEROZERO_SYMBOL } from '../constants/tokens'
+import { ZEROZERO, ZEROZERO_SYMBOL } from '../constants/tokens'
 import { useAllLists, useCombinedActiveList, useInactiveListUrls } from '../state/lists/hooks'
 import { TokenAddressMap, useUnsupportedTokenList } from '../state/lists/hooks'
 import { WrappedTokenInfo } from '../state/lists/wrappedTokenInfo'
@@ -184,19 +184,7 @@ export function useCurrency(currencyId: string | null | undefined): Currency | n
   const { chainId } = useActiveWeb3React()
   const isETH = currencyId?.toUpperCase() === 'ETH'
   const isZeroZero = currencyId?.toUpperCase() === ZEROZERO_SYMBOL
-  const token = useToken(
-    isETH ? undefined : isZeroZero ? ZEROZERO[chainId ?? SupportedChainId.MAINNET].address : currencyId
-  )
-  const extendedEther = useMemo(
-    () =>
-      chainId
-        ? ExtendedEther.onChain(chainId)
-        : // display mainnet when not connected
-          ExtendedEther.onChain(SupportedChainId.MAINNET),
-    [chainId]
-  )
-  const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
+  const token = useToken(isETH || isZeroZero ? ZEROZERO[chainId ?? SupportedChainId.MAINNET].address : currencyId)
   if (currencyId === null || currencyId === undefined) return currencyId
-  if (weth?.address?.toUpperCase() === currencyId?.toUpperCase()) return weth
-  return isETH ? extendedEther : token
+  return token
 }
