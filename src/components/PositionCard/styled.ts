@@ -6,7 +6,7 @@ export const CardNoise = styled.span`
   background: url(${noise});
   background-size: cover;
   mix-blend-mode: overlay;
-  border-radius: 12px;
+  border-radius: 8px;
   width: 100%;
   height: 100%;
   opacity: 0.15;

@@ -20,10 +20,10 @@ const FlyoutMenu = styled.div`
   background-color: ${({ theme }) => theme.bg1};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
-  border-radius: 20px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 14px;
   overflow: auto;
   padding: 16px;
   position: absolute;
@@ -65,6 +65,7 @@ const NetworkLabel = styled.div`
 `
 const SelectorLabel = styled(NetworkLabel)`
   display: none;
+  font-size: 14px;
   @media screen and (min-width: ${MEDIA_WIDTHS.upToSmall}px) {
     display: block;
     margin-right: 8px;
@@ -74,7 +75,7 @@ const SelectorControls = styled.div<{ interactive: boolean }>`
   align-items: center;
   background-color: ${({ theme }) => theme.bg1};
   border: 2px solid ${({ theme }) => theme.bg1};
-  border-radius: 12px;
+  border-radius: 8px;
   color: ${({ theme }) => theme.text1};
   cursor: ${({ interactive }) => (interactive ? 'pointer' : 'auto')};
   display: flex;

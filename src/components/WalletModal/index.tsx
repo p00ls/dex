@@ -63,8 +63,8 @@ const HeaderRow = styled.div`
 const ContentWrapper = styled.div`
   background-color: ${({ theme }) => theme.bg0};
   padding: 0 1rem 1rem 1rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`padding: 0 1rem 1rem 1rem`};
 `
@@ -402,7 +402,7 @@ export default function WalletModal({
                 </ThemedText.Black>
               </AutoRow>
             </LightCard>
-            <LinkCard padding=".5rem" $borderRadius=".75rem" onClick={() => setWalletView(WALLET_VIEWS.LEGAL)}>
+            <LinkCard padding=".5rem" $borderRadius="8px" onClick={() => setWalletView(WALLET_VIEWS.LEGAL)}>
               <RowBetween>
                 <AutoRow gap="4px">
                   <Info size={20} />

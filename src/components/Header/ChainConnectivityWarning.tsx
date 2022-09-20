@@ -27,7 +27,7 @@ const TitleText = styled.div`
 `
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.yellow3};
-  border-radius: 12px;
+  border-radius: 8px;
   bottom: 60px;
   display: none;
   max-width: 348px;
