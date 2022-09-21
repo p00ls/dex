@@ -20,7 +20,7 @@ export const ZEROZERO: { [chainId: number]: Token } = {
   ),
   [SupportedChainId.GOERLI]: new Token(
     SupportedChainId.GOERLI,
-    '0xb794f5ea0ba39494ce839613fffba74279579268',
+    '0xa6aad04cd9a55881b4d10878fe035004bb36fc60',
     18,
     ZEROZERO_SYMBOL,
     '00'
