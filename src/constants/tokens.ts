@@ -44,7 +44,7 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ),
   [SupportedChainId.GOERLI]: new Token(
     SupportedChainId.GOERLI,
-    '0xb794f5ea0ba39494ce839613fffba74279579268',
+    '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',
     18,
     'WETH',
     'Wrapped Ether'

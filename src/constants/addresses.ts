@@ -1,19 +1,22 @@
-import { constructSameAddressMap } from '../utils/constructSameAddressMap'
 import { SupportedChainId } from './chains'
 
 type AddressMap = { [chainId: number]: string }
 
-// export const MULTICALL_ADDRESS: AddressMap = {
-//   [SupportedChainId.MAINNET]: '0xb794f5ea0ba39494ce839613fffba74279579268',
-//   [SupportedChainId.RINKEBY]: '0xb794f5ea0ba39494ce839613fffba74279579268',
-//   [SupportedChainId.GOERLI]: '0xb794f5ea0ba39494ce839613fffba74279579268',
-// }
-export const MULTICALL_ADDRESS: AddressMap = constructSameAddressMap('0x1F98415757620B543A52E61c46B32eB19261F984', [])
+export const MULTICALL_ADDRESS: AddressMap = {
+  [SupportedChainId.MAINNET]: '0x1F98415757620B543A52E61c46B32eB19261F984',
+  [SupportedChainId.RINKEBY]: '0x1F98415757620B543A52E61c46B32eB19261F984',
+  [SupportedChainId.GOERLI]: '0x32F1a749c071c5F276FFe9ea753ca19bF1bDa244',
+}
 
 export const V2_FACTORY_ADDRESSES: AddressMap = {
   [SupportedChainId.MAINNET]: '0xb794f5ea0ba39494ce839613fffba74279579268',
   [SupportedChainId.RINKEBY]: '0x2D1bA0082A97321e736eA091D7d5D1d48952c27C',
   [SupportedChainId.GOERLI]: '0x4Eb4445EBc238080307A576Cee6B82baf39D5658',
+}
+export const FACTORY_TEMPLATE_ADDRESSES: AddressMap = {
+  [SupportedChainId.MAINNET]: '0xb794f5ea0ba39494ce839613fffba74279579268',
+  [SupportedChainId.RINKEBY]: '0x696F17BF299A26D3Fa40dd7e3cbdd884867461e1',
+  [SupportedChainId.GOERLI]: '0x2EC05dbD2e7d6Ee00FAfB3045EaE880F10796f1D',
 }
 export const V2_ROUTER_ADDRESS: AddressMap = {
   [SupportedChainId.MAINNET]: '0xb794f5ea0ba39494ce839613fffba74279579268',

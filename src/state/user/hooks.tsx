@@ -1,14 +1,15 @@
 import { Percent, Token } from '@uniswap/sdk-core'
-import { computePairAddress, Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@uniswap/v2-sdk'
 import { SupportedLocale } from 'constants/locales'
 import JSBI from 'jsbi'
 import { useCallback, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 
-import { V2_FACTORY_ADDRESSES } from '../../constants/addresses'
+import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../../constants/addresses'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants/routing'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
+import { computePairAddress } from '../../utils/p00ls/pair'
 import { AppState } from '../index'
 import {
   addSerializedPair,
@@ -201,7 +202,12 @@ export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
 
   return new Token(
     tokenA.chainId,
-    computePairAddress({ factoryAddress: V2_FACTORY_ADDRESSES[tokenA.chainId], tokenA, tokenB }),
+    computePairAddress({
+      factoryAddress: V2_FACTORY_ADDRESSES[tokenA.chainId],
+      templateAddress: FACTORY_TEMPLATE_ADDRESSES[tokenA.chainId],
+      tokenA,
+      tokenB,
+    }),
     18,
     'UNI-V2',
     'Uniswap V2'
