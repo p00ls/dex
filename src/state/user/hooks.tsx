@@ -1,5 +1,5 @@
+import { Pair } from '@p00ls/uniswap-v2-sdk'
 import { Percent, Token } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
 import { SupportedLocale } from 'constants/locales'
 import JSBI from 'jsbi'
 import { useCallback, useMemo } from 'react'

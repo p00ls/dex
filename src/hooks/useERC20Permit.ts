@@ -1,6 +1,6 @@
 import { splitSignature } from '@ethersproject/bytes'
+import { Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import JSBI from 'jsbi'
 import { useMemo, useState } from 'react'
 

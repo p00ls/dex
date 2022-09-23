@@ -26,6 +26,8 @@ jobs:
           scope: '@p00ls'
       - name: Install dependencies
         run: yarn install --frozen-lockfile --immutable --immutable-cache
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Lint
         run: yarn lint
       - name: Run tests

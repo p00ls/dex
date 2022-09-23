@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi'
+import { Pair } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
-import { Pair } from '@uniswap/v2-sdk'
 import { useMemo } from 'react'
 
 import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../constants/addresses'

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
+import { Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { LoadingOpacityContainer } from 'components/Loader/styled'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import { AutoRouterLogo } from 'components/swap/RouterLabel'
