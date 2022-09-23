@@ -1,6 +1,6 @@
 {
-  "name": "@uniswap/interface",
-  "description": "Uniswap Interface",
+  "name": "@p00ls/dex",
+  "description": "zerozero DEX",
   "homepage": ".",
   "main": "dist/interface.js",
   "module": "dist/interface.esm.js",
