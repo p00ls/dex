@@ -2,6 +2,7 @@ import { Pair, Route, Trade } from '@p00ls/uniswap-v2-sdk'
 import { CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 
+import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../constants/addresses'
 import { computeRealizedLPFeeAmount, warningSeverity } from './prices'
 
 describe('prices', () => {
@@ -11,11 +12,15 @@ describe('prices', () => {
 
   const pair12 = new Pair(
     CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(10000)),
-    CurrencyAmount.fromRawAmount(token2, JSBI.BigInt(20000))
+    CurrencyAmount.fromRawAmount(token2, JSBI.BigInt(20000)),
+    V2_FACTORY_ADDRESSES,
+    FACTORY_TEMPLATE_ADDRESSES
   )
   const pair23 = new Pair(
     CurrencyAmount.fromRawAmount(token2, JSBI.BigInt(20000)),
-    CurrencyAmount.fromRawAmount(token3, JSBI.BigInt(30000))
+    CurrencyAmount.fromRawAmount(token3, JSBI.BigInt(30000)),
+    V2_FACTORY_ADDRESSES,
+    FACTORY_TEMPLATE_ADDRESSES
   )
 
   describe('#computeRealizedLPFeeAmount', () => {

@@ -3196,10 +3196,10 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.4.2-solc-0.7.tgz#38f4dbab672631034076ccdf2f3201fab1726635"
   integrity sha512-W6QmqgkADuFcTLzHL8vVoNBtkwjvQRpYIAom7KiUNoLKghyx3FgH0GBjt8NRvigV1ZmMOBllvE1By1C+bi8WpA==
 
-"@p00ls/uniswap-v2-sdk@3.0.1":
-  version "3.0.1"
-  resolved "https://npm.pkg.github.com/download/@p00ls/uniswap-v2-sdk/3.0.1/6362b317abd7bc472225a176f5943627648df38c#6362b317abd7bc472225a176f5943627648df38c"
-  integrity sha512-CIXuLIPWA27LGcwEDF+CEKilf8A2exD+vNQEPrpOvN0Gzmd5TQe6IxLSdeRdWN09VsE0Rj2wj6lNaolX0Lkv7Q==
+"@p00ls/uniswap-v2-sdk@3.0.3":
+  version "3.0.3"
+  resolved "https://npm.pkg.github.com/download/@p00ls/uniswap-v2-sdk/3.0.3/8956e9610f17718c94ce391aed4fb1c627dd91f1#8956e9610f17718c94ce391aed4fb1c627dd91f1"
+  integrity sha512-Vy4GA2XZae8jRcH+i8Bw3ECBBigWo/vbH+5uKjtFspVKQMTx3WH08QR7vFIppWkLy/N94D+VFnxcTORyj/liWA==
   dependencies:
     "@ethersproject/address" "^5.0.0"
     "@ethersproject/solidity" "^5.0.0"
