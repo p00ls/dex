@@ -25,7 +25,7 @@ exports[`renders multi route 1`] = `
           class="Badge-sc-g51hsj-0 RoutingDiagram__OpaqueBadge-sc-1sgyp7i-6 bRVwmk eZDNFW"
         >
           <div
-            class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+            class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             style="word-break: normal;"
           >
             75%
@@ -45,7 +45,7 @@ exports[`renders multi route 1`] = `
               DoubleCurrencyLogo currency0=DAI currency1=USDC
             </div>
             <div
-              class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+              class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             >
               0.01%
             </div>
@@ -74,7 +74,7 @@ exports[`renders multi route 1`] = `
           class="Badge-sc-g51hsj-0 RoutingDiagram__OpaqueBadge-sc-1sgyp7i-6 bRVwmk eZDNFW"
         >
           <div
-            class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+            class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             style="word-break: normal;"
           >
             25%
@@ -94,7 +94,7 @@ exports[`renders multi route 1`] = `
               DoubleCurrencyLogo currency0=WBTC currency1=USDC
             </div>
             <div
-              class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+              class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             >
               0.3%
             </div>
@@ -108,7 +108,7 @@ exports[`renders multi route 1`] = `
               DoubleCurrencyLogo currency0=DAI currency1=WBTC
             </div>
             <div
-              class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+              class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             >
               1%
             </div>
@@ -146,7 +146,7 @@ exports[`renders single route 1`] = `
           class="Badge-sc-g51hsj-0 RoutingDiagram__OpaqueBadge-sc-1sgyp7i-6 bRVwmk eZDNFW"
         >
           <div
-            class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+            class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             style="word-break: normal;"
           >
             100%
@@ -166,7 +166,7 @@ exports[`renders single route 1`] = `
               DoubleCurrencyLogo currency0=DAI currency1=USDC
             </div>
             <div
-              class="theme__TextWrapper-sc-18nh1jk-0 cWOfab css-15li2d9"
+              class="theme__TextWrapper-sc-xx7zfj-0 jQATR css-15li2d9"
             >
               0.05%
             </div>
