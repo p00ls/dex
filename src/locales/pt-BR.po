@@ -99,10 +99,6 @@ msgstr "<0>Dica:</0> A remoção de tokens em lotes converte sua posição de vo
 msgid "<0>Tip:</0> Select an action and describe your proposal for the community. The proposal cannot be modified after submission, so please verify all information before submitting. The voting period will begin immediately and last for 7 days. To propose a custom action, <1>read the docs</1>."
 msgstr "<0> Dica:</0> Selecione uma ação e descreva sua proposta para a comunidade. A proposta não pode ser modificada após o envio, portanto, verifique todas as informações antes de enviar. O período de votação começará imediatamente e durará 7 dias. Para propor uma ação personalizada, <1> leia a documentação</1> ."
 
-#: src/pages/PoolFinder/index.tsx
-msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-msgstr "<0>Dica:</0> Use esta ferramenta para encontrar lotes V2 que não são exibidos automaticamente na interface."
-
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Dica:</0> Quando você adiciona liquidez, você recebe tokens em lotes que representam sua posição. Esses tokens têm taxas de rendimento automaticamente proporcionais ao seu compartilhamento do lote, e podem ser resgatados a qualquer momento."
@@ -142,8 +138,8 @@ msgid "Add"
 msgstr "Adicionar"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
-msgid "Add <0/> and <1/> to Uniswap V2"
-msgstr "Adicione <0 /> e <1 /> ao Uniswap V2"
+msgid "Add <0/> and <1/> to zerozero"
+msgstr "Adicione <0 /> e <1 /> ao zerozero"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Add Delegate +"
@@ -155,8 +151,8 @@ msgid "Add Liquidity"
 msgstr "Adicionar Liquidez"
 
 #: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Adicionar Liquidez V2"
+msgid "Add Liquidity"
+msgstr "Adicionar Liquidez"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -215,8 +211,8 @@ msgid "Amount"
 msgstr "Valor"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Ocorreu um erro ao tentar executar esta troca. Pode ser necessário aumentar sua tolerância ao deslizamento. Se isso não funcionar, pode haver uma incompatibilidade com o token que você está negociando. Nota: a taxa de transferência e tokens de rebase são incompatíveis com Uniswap V3."
+msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading."
+msgstr "Ocorreu um erro ao tentar executar esta troca. Pode ser necessário aumentar sua tolerância ao deslizamento. Se isso não funcionar, pode haver uma incompatibilidade com o token que você está negociando."
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -517,10 +513,6 @@ msgstr "Conectar-se a uma carteira"
 msgid "Connect to a wallet to find pools"
 msgstr "Conectar-se a uma carteira para localizar lotes"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "Connect to a wallet to view your V2 liquidity."
-msgstr "Conectar-se a uma carteira para ver sua Liquidez V2."
-
 #: src/pages/Pool/v2.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Conectar-se a uma carteira para ver sua liquidez."
@@ -620,10 +612,6 @@ msgstr "Valores do depósito"
 msgid "Deposit Assets"
 msgstr "Ativos de depósito"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
-msgstr "Depositar tokens LP UNI-V2"
-
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Deposit liquidity"
 msgstr "Liquidez do depósito"
@@ -635,10 +623,6 @@ msgstr "Deposite sua tokens de Fornecedores com Liquidez para receber UNI, o tok
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
 msgstr "Liquidez depositada:"
-
-#: src/components/earn/StakingModal.tsx
-msgid "Deposited {0} UNI-V2"
-msgstr "{0} UNI-V2 depositados"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Depositing Liquidity"
@@ -671,10 +655,6 @@ msgstr "Dispensar"
 #: src/components/Menu/index.tsx
 msgid "Docs"
 msgstr "Docs"
-
-#: src/pages/MigrateV2/index.tsx
-msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
-msgstr "Não está vendo uma de suas posições V2? <0>Importe-a.</0>"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -781,10 +761,6 @@ msgstr "Nível de taxa"
 msgid "For"
 msgstr "Para"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-msgstr "Para cada lote exibido abaixo, clique em migrar para remover sua liquidez do Uniswap V2 e depositá-la it no Uniswap V3."
-
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
 msgid "From"
@@ -849,8 +825,8 @@ msgid "Import Pool"
 msgstr "Importar Lote"
 
 #: src/components/NavigationTabs/index.tsx
-msgid "Import V2 Pool"
-msgstr "Importar Lote V2"
+msgid "Import Pool"
+msgstr "Importar Lote"
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "Import at your own risk"
@@ -1051,15 +1027,6 @@ msgstr "Migrar Liquidez"
 msgid "Migrate Liquidity to V3"
 msgstr "Migrar Liquidez para V3"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/MigrateV2/index.tsx
-msgid "Migrate V2 Liquidity"
-msgstr "Migrar Liquidez V2"
-
-#: src/pages/MigrateV2/index.tsx
-msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-msgstr "Migrar seus tokens de liquidez do Uniswap V2 para o Uniswap V3."
-
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Migrate {0}/{1} liquidity to V3"
 msgstr "Migrar {0}/{1} liquidez para V3"
@@ -1100,10 +1067,6 @@ msgstr "Aviso de rede"
 #: src/pages/Pool/index.tsx
 msgid "New Position"
 msgstr "Nova Posição"
-
-#: src/pages/MigrateV2/index.tsx
-msgid "No V2 Liquidity found."
-msgstr "Nenhuma liquidez V2 encontrada."
 
 #: src/pages/Earn/index.tsx
 #: src/pages/Earn/index.tsx
@@ -1434,8 +1397,8 @@ msgid "Select a token"
 msgstr "Selecione um token"
 
 #: src/pages/PoolFinder/index.tsx
-msgid "Select a token to find your v2 liquidity."
-msgstr "Selecione um token para calcular sua liquidez V2."
+msgid "Select a token to find your liquidity."
+msgstr "Selecione um token para calcular sua liquidez."
 
 #: src/pages/CreateProposal/ProposalActionSelector.tsx
 msgid "Select an action"
@@ -1498,10 +1461,6 @@ msgstr "Ocorreu um erro"
 #: src/components/PositionList/index.tsx
 msgid "Status"
 msgstr "Status"
-
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
-msgstr "Etapa 1. Obtenha Tokens de Liquidez UNI-V2"
 
 #: src/components/AccountDetails/TransactionSummary.tsx
 msgid "Submit new proposal"
@@ -1606,8 +1565,8 @@ msgid "The output token cannot be transferred. There may be an issue with the ou
 msgstr "O token resultante não pode ser transferido. Pode haver um problema com o token resultante."
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The output token cannot be transferred. There may be an issue with the output token. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "O token de saída não pode ser transferido. Pode haver um problema com o token de saída. Nota: a taxa de transferência e tokens de rebase são incompatíveis com Uniswap V3."
+msgid "The output token cannot be transferred. There may be an issue with the output token."
+msgstr "O token de saída não pode ser transferido. Pode haver um problema com o token de saída."
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1658,8 +1617,8 @@ msgid "This tool will safely migrate your {0} liquidity to V3. The process is co
 msgstr "Esta ferramenta fará a migração da sua liquidez {0} em segurança para V3. O processo não é inteiramente confiável, devido ao"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Esta transação não terá sucesso devido ao movimento do preço. Tente aumentar sua tolerância ao deslizamento. Nota: a taxa de transferência e tokens de rebase são incompatíveis com Uniswap V3."
+msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance."
+msgstr "Esta transação não terá sucesso devido ao movimento do preço. Tente aumentar sua tolerância ao deslizamento."
 
 #: src/hooks/useSwapCallback.tsx
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -1780,14 +1739,6 @@ msgstr "Os tokens de UNI representam capital votante na governança do Uniswap. 
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} queimados"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr "Tokens LP UNI-V2 são necessários. Uma vez adicionada a liquidez ao lote {0}-{1}, você poderá negociar seus tokens de liquidez nesta página."
-
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr "UNI-V2 {0}-{1}"
-
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
@@ -1846,8 +1797,8 @@ msgid "Unknown Source"
 msgstr "Fonte desconhecida"
 
 #: src/hooks/useSwapCallback.tsx
-msgid "Unknown error{0}. Try increasing your slippage tolerance. Note: fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Erro desconhecido{0}. Tente aumentar sua tolerância ao deslizamento. Nota: a taxa de transferência e tokens de rebase são incompatíveis com Uniswap V3."
+msgid "Unknown error{0}. Try increasing your slippage tolerance."
+msgstr "Erro desconhecido{0}. Tente aumentar sua tolerância ao deslizamento."
 
 #: src/pages/Vote/Landing.tsx
 #: src/pages/Vote/VotePage.tsx
@@ -1901,18 +1852,6 @@ msgid "User"
 msgstr "Usuário"
 
 #: src/components/swap/SwapRoute.tsx
-msgid "V2"
-msgstr "V2"
-
-#: src/pages/Pool/v2.tsx
-msgid "V2 is not available on Layer 2. Switch to Layer 1 Ethereum."
-msgstr "V2 não está disponível na camada 2. Alterne para a camada 1 Ethereum."
-
-#: src/pages/Pool/index.tsx
-msgid "V2 liquidity"
-msgstr "Liquidez V2"
-
-#: src/components/swap/SwapRoute.tsx
 msgid "V3"
 msgstr "V3"
 
@@ -1924,10 +1863,6 @@ msgstr "Preço V3 {0}:"
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr "Visualizar análise de UNI"
-
-#: src/pages/Pool/index.tsx
-msgid "View V2 Liquidity"
-msgstr "Visualizar liquidez V2"
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -2059,14 +1994,6 @@ msgstr "Sacar e Reivindicar"
 msgid "Withdraw deposited liquidity"
 msgstr "Sacar liquidez depositada"
 
-#: src/components/earn/UnstakingModal.tsx
-msgid "Withdrawing {0} UNI-V2"
-msgstr "Sacar {0} UNI-V2"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Withdrew UNI-V2!"
-msgstr "Sacou UNI-V2!"
-
 #: src/pages/Swap/index.tsx
 msgid "Wrap"
 msgstr "Cobrir"
@@ -2150,8 +2077,8 @@ msgid "Your UNI Breakdown"
 msgstr "Seu Detalhamento UNI"
 
 #: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Sua liquidez V2"
+msgid "Your liquidity"
+msgstr "Sua liquidez"
 
 #: src/pages/Pool/index.tsx
 msgid "Your V3 liquidity positions will appear here."
@@ -2328,14 +2255,6 @@ msgstr "{0} UNI"
 #: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} UNI/semana"
-
-#: src/components/earn/StakingModal.tsx
-msgid "{0} UNI-V2"
-msgstr "{0} UNI-V2"
-
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr "{0} tokens UNI-V2 LP disponíveis"
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
