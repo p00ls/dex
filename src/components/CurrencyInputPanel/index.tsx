@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
+import { Pair } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount, Percent, Token } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
 import { AutoColumn } from 'components/Column'
 import { LoadingOpacityContainer, loadingOpacityMixin } from 'components/Loader/styled'
 import { darken } from 'polished'

@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@p00ls/uniswap-v2-sdk'
 import { useContext, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Text } from 'rebass'

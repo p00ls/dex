@@ -1,8 +1,9 @@
+import { Pair, Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { Pair, Trade } from '@uniswap/v2-sdk'
 import { useMemo } from 'react'
 import { isTradeBetter } from 'utils/isTradeBetter'
 
+import { FEE_QUOTIENT } from '../constants/feeAmount'
 import { BETTER_TRADE_LESS_HOPS_THRESHOLD } from '../constants/misc'
 import { useAllCurrencyCombinations } from './useAllCurrencyCombinations'
 import { PairState, useV2Pairs } from './useV2Pairs'
@@ -53,10 +54,10 @@ export function useBestV2Trade(
         const options = { maxHops: 1, maxNumResults: 1 }
         if (tradeType === TradeType.EXACT_INPUT) {
           const amountIn = amountSpecified
-          return Trade.bestTradeExactIn(allowedPairs, amountIn, currencyOut, options)[0] ?? null
+          return Trade.bestTradeExactIn(allowedPairs, amountIn, currencyOut, FEE_QUOTIENT, options)[0] ?? null
         } else {
           const amountOut = amountSpecified
-          return Trade.bestTradeExactOut(allowedPairs, currencyIn, amountOut, options)[0] ?? null
+          return Trade.bestTradeExactOut(allowedPairs, currencyIn, amountOut, FEE_QUOTIENT, options)[0] ?? null
         }
       }
 
@@ -68,10 +69,10 @@ export function useBestV2Trade(
 
         if (tradeType === TradeType.EXACT_INPUT) {
           const amountIn = amountSpecified
-          currentTrade = Trade.bestTradeExactIn(allowedPairs, amountIn, currencyOut, options)[0] ?? null
+          currentTrade = Trade.bestTradeExactIn(allowedPairs, amountIn, currencyOut, FEE_QUOTIENT, options)[0] ?? null
         } else {
           const amountOut = amountSpecified
-          currentTrade = Trade.bestTradeExactOut(allowedPairs, currencyIn, amountOut, options)[0] ?? null
+          currentTrade = Trade.bestTradeExactOut(allowedPairs, currencyIn, amountOut, FEE_QUOTIENT, options)[0] ?? null
         }
 
         // if current trade is best yet, save it

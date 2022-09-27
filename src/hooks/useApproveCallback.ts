@@ -1,7 +1,7 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
+import { Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { useCallback, useMemo } from 'react'
 
 import { V2_ROUTER_ADDRESS } from '../constants/addresses'

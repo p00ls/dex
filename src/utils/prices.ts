@@ -1,5 +1,5 @@
+import { Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import JSBI from 'jsbi'
 
 import {
@@ -9,14 +9,14 @@ import {
   BLOCKED_PRICE_IMPACT_NON_EXPERT,
 } from '../constants/misc'
 
-const THIRTY_BIPS_FEE = new Percent(JSBI.BigInt(30), JSBI.BigInt(10000))
+const BIPS_FEE = new Percent(JSBI.BigInt(50), JSBI.BigInt(10000))
 const ONE_HUNDRED_PERCENT = new Percent(JSBI.BigInt(10000), JSBI.BigInt(10000))
-const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(THIRTY_BIPS_FEE)
+const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BIPS_FEE)
 
 // computes realized lp fee as a percent
 export function computeRealizedLPFeePercent(trade: V2Trade<Currency, Currency, TradeType>): Percent {
-  // for each hop in our trade, take away the x*y=k price impact from 0.3% fees
-  // e.g. for 3 tokens/2 hops: 1 - ((1 - .03) * (1-.03))
+  // for each hop in our trade, take away the x*y=k price impact from 0.XX% fees
+  // e.g. for 3 tokens/2 hops: 1 - ((1 - .XX) * (1-.XX))
   const percent = ONE_HUNDRED_PERCENT.subtract(
     trade.route.pairs.reduce<Percent>(
       (currentFee: Percent): Percent => currentFee.multiply(INPUT_FRACTION_AFTER_FEE),

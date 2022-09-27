@@ -1,5 +1,5 @@
+import { computePairAddress, Pair } from '@p00ls/uniswap-v2-sdk'
 import { Percent, Token } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
 import { SupportedLocale } from 'constants/locales'
 import JSBI from 'jsbi'
 import { useCallback, useMemo } from 'react'
@@ -9,7 +9,6 @@ import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../../constant
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants/routing'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
-import { computePairAddress } from '../../utils/p00ls/pair'
 import { AppState } from '../index'
 import {
   addSerializedPair,

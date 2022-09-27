@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
+import { Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { useContext, useState } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import { Text } from 'rebass'

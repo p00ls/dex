@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber'
 // eslint-disable-next-line no-restricted-imports
 import { t, Trans } from '@lingui/macro'
+import { Router, Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
-import { Router, Trade as V2Trade } from '@uniswap/v2-sdk'
 import { ReactNode, useMemo } from 'react'
 
 import { TransactionType } from '../state/transactions/actions'

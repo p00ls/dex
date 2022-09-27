@@ -3196,6 +3196,17 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.4.2-solc-0.7.tgz#38f4dbab672631034076ccdf2f3201fab1726635"
   integrity sha512-W6QmqgkADuFcTLzHL8vVoNBtkwjvQRpYIAom7KiUNoLKghyx3FgH0GBjt8NRvigV1ZmMOBllvE1By1C+bi8WpA==
 
+"@p00ls/uniswap-v2-sdk@3.0.4":
+  version "3.0.4"
+  resolved "https://npm.pkg.github.com/download/@p00ls/uniswap-v2-sdk/3.0.4/f8c92e69403ff25d58f93b06355da7f75a597922#f8c92e69403ff25d58f93b06355da7f75a597922"
+  integrity sha512-hkJ7XZNqQO/Yo+C8C1Evpls4Wb3FLIgjkAQMxTadhOl5EbnnwO+QVhc9Z6mT9+wqrcoZ7iKQWrDIfv91EwyoFA==
+  dependencies:
+    "@ethersproject/address" "^5.0.0"
+    "@ethersproject/solidity" "^5.0.0"
+    "@uniswap/sdk-core" "^3.0.0-alpha.3"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+
 "@pedrouid/environment@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
@@ -4721,17 +4732,6 @@
   dependencies:
     "@uniswap/lib" "1.1.1"
     "@uniswap/v2-core" "1.0.0"
-
-"@uniswap/v2-sdk@^3.0.0-alpha.2":
-  version "3.0.0-alpha.2"
-  resolved "https://registry.npmjs.org/@uniswap/v2-sdk/-/v2-sdk-3.0.0-alpha.2.tgz"
-  integrity sha512-LkGGZMdJueIIC3OBzgiBMV/1GdZgzTTf2qGEgBAxJUuCSFf5wZQgWNU4KOkoaBrl/FlEctAGSgGh3j3BhWKL5Q==
-  dependencies:
-    "@ethersproject/address" "^5.0.0"
-    "@ethersproject/solidity" "^5.0.0"
-    "@uniswap/sdk-core" "^3.0.0-alpha.3"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
 
 "@uniswap/v3-core@1.0.0":
   version "1.0.0"
