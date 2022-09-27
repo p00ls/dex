@@ -1,14 +1,11 @@
-import { Trans } from '@lingui/macro'
 import { Trade as V2Trade } from '@p00ls/uniswap-v2-sdk'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
-import Badge from 'components/Badge'
 import { AutoColumn } from 'components/Column'
 import { LoadingRows } from 'components/Loader/styled'
 import RoutingDiagram, { RoutingDiagramEntry } from 'components/RoutingDiagram/RoutingDiagram'
 import { AutoRow, RowBetween } from 'components/Row'
 import { memo } from 'react'
 import styled from 'styled-components/macro'
-import { ThemedText } from 'theme'
 
 import { FeeAmount } from '../../constants/feeAmount'
 import { AutoRouterLabel, AutoRouterLogo } from './RouterLabel'
@@ -39,13 +36,7 @@ export default memo(function SwapRoute({
           <LoadingRows>
             <div style={{ width: '30px', height: '24px' }} />
           </LoadingRows>
-        ) : (
-          <Badge>
-            <ThemedText.Black fontSize={12}>
-              <Trans>V2</Trans>
-            </ThemedText.Black>
-          </Badge>
-        )}
+        ) : null}
       </RowBetween>
       <Separator />
       {syncing ? (
