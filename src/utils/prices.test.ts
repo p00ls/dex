@@ -3,6 +3,7 @@ import { CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
 
 import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../constants/addresses'
+import { FEE_QUOTIENT } from '../constants/feeAmount'
 import { computeRealizedLPFeeAmount, warningSeverity } from './prices'
 
 describe('prices', () => {
@@ -34,10 +35,11 @@ describe('prices', () => {
           new Trade(
             new Route([pair12], token1, token2),
             CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(1000)),
-            TradeType.EXACT_INPUT
+            TradeType.EXACT_INPUT,
+            FEE_QUOTIENT
           )
         )
-      ).toEqual(CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(3)))
+      ).toEqual(CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(5)))
     })
 
     it('correct realized lp fee for double hop', () => {
@@ -46,10 +48,11 @@ describe('prices', () => {
           new Trade(
             new Route([pair12, pair23], token1, token3),
             CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(1000)),
-            TradeType.EXACT_INPUT
+            TradeType.EXACT_INPUT,
+            FEE_QUOTIENT
           )
         )
-      ).toEqual(CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(5)))
+      ).toEqual(CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(9)))
     })
   })
 
