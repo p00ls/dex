@@ -95,10 +95,6 @@ msgstr "<0> Precio actual:</0> <1> <2 /></1> <3>{0} por {1}</3>"
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0>Consejo:</0> La eliminación de tokens del fondo común revierte su posición en tokens subyacentes a la tasa actual, en proporción a su participación en dicho fondo. Las comisiones acumuladas se incluyen en las cantidades que recibe."
 
-#: src/pages/CreateProposal/index.tsx
-msgid "<0>Tip:</0> Select an action and describe your proposal for the community. The proposal cannot be modified after submission, so please verify all information before submitting. The voting period will begin immediately and last for 7 days. To propose a custom action, <1>read the docs</1>."
-msgstr "<0> Consejo:</0> Seleccione una acción y describa su propuesta para la comunidad. La propuesta no se puede modificar después de la presentación, por lo que debe verificar toda la información antes de enviarla. El período de votación comenzará de inmediato y tendrá una duración de 7 días. Para proponer una acción personalizada, <1> lea los documentos</1> ."
-
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
 msgstr "<0>Consejo:</0> Utilice esta herramienta para encontrar grupos que no aparecen automáticamente en la interfaz."
@@ -112,8 +108,8 @@ msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0>Desbloquee la votación</0> para prepararse para la siguiente propuesta."
 
 #: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0>🎉 </0>Bienvenido al equipo Unicorn :) <1>🎉</1>"
+msgid "<0>\uD83C\uDF89 </0>Welcome to team Unicorn :) <1>\uD83C\uDF89</1>"
+msgstr "<0>\uD83C\uDF89 </0>Bienvenido al equipo Unicorn :) <1>\uD83C\uDF89</1>"
 
 #: src/pages/Vote/Landing.tsx
 msgid "A minimum threshold of 0.25% of the total UNI supply is required to submit proposals"

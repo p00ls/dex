@@ -95,9 +95,9 @@ msgstr "<0> Preço atual:</0> <1> <2 /></1> <3>{0} por {1}</3>"
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0>Dica:</0> A remoção de tokens em lotes converte sua posição de volta a tokens secundários à taxa atual, proporcionalmente ao seu compartilhamento do lote. As taxas acumuladas estão incluídas nos valores que você receber."
 
-#: src/pages/CreateProposal/index.tsx
-msgid "<0>Tip:</0> Select an action and describe your proposal for the community. The proposal cannot be modified after submission, so please verify all information before submitting. The voting period will begin immediately and last for 7 days. To propose a custom action, <1>read the docs</1>."
-msgstr "<0> Dica:</0> Selecione uma ação e descreva sua proposta para a comunidade. A proposta não pode ser modificada após o envio, portanto, verifique todas as informações antes de enviar. O período de votação começará imediatamente e durará 7 dias. Para propor uma ação personalizada, <1> leia a documentação</1> ."
+#: src/pages/PoolFinder/index.tsx
+msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
+msgstr "<0>Dica:</0> Use esta ferramenta para encontrar lotes que não são exibidos automaticamente na interface."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -108,8 +108,8 @@ msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0>Votação de desbloqueio</0> para se preparar para a próxima proposta."
 
 #: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0>🎉 </0>Seja bem-vindo à Equipe Unicórnio :) <1>🎉</1>"
+msgid "<0>\uD83C\uDF89 </0>Welcome to team Unicorn :) <1>\uD83C\uDF89</1>"
+msgstr "<0>\uD83C\uDF89 </0>Seja bem-vindo à Equipe Unicórnio :) <1>\uD83C\uDF89</1>"
 
 #: src/pages/Vote/Landing.tsx
 msgid "A minimum threshold of 0.25% of the total UNI supply is required to submit proposals"

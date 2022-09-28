@@ -95,10 +95,6 @@ msgstr "<0>Prix actuel :</0> <1><2/></1> <3>{0} pour {1}</3>"
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0>Conseil:</0> Le retrait des jetons dans la pool convertit votre position en jetons sous-jacents au taux actuel, proportionnel à votre part de la pool. Vos bénéfices (frais) sont inclus dans les montants que vous recevrez."
 
-#: src/pages/CreateProposal/index.tsx
-msgid "<0>Tip:</0> Select an action and describe your proposal for the community. The proposal cannot be modified after submission, so please verify all information before submitting. The voting period will begin immediately and last for 7 days. To propose a custom action, <1>read the docs</1>."
-msgstr "<0>Conseil :</0> Sélectionnez une action et décrivez votre proposition pour la communauté. La proposition ne peut pas être modifiée après la soumission, veuillez donc vérifier toutes les informations avant de la soumettre. La période de vote commencera immédiatement et durera 7 jours. Pour proposer une action personnalisée, <1>lisez la doc</1> ."
-
 #: src/pages/PoolFinder/index.tsx
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
 msgstr "<0>Conseil :</0> Utilisez cet outil pour rechercher les pools qui n'apparaissent pas automatiquement dans l'interface."
@@ -112,8 +108,8 @@ msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0>Débloquer le vote</0> pour se préparer à la prochaine proposition."
 
 #: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0>🎉 </0>Bienvenue dans l'équipe des Licornes :) <1>🎉</1>"
+msgid "<0>\uD83C\uDF89 </0>Welcome to team Unicorn :) <1>\uD83C\uDF89</1>"
+msgstr "<0>\uD83C\uDF89 </0>Bienvenue dans l'équipe des Licornes :) <1>\uD83C\uDF89</1>"
 
 #: src/pages/Vote/Landing.tsx
 msgid "A minimum threshold of 0.25% of the total UNI supply is required to submit proposals"

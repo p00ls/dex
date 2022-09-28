@@ -103,7 +103,7 @@ export default function PoolFinder() {
             <AutoColumn gap="10px">
               <ThemedText.Link fontWeight={400} color={'primaryText1'}>
                 <Trans>
-                  <b>Tip:</b> Use this tool to find v2 pools that don&apos;t automatically appear in the interface.
+                  <b>Tip:</b> Use this tool to find pools that don&apos;t automatically appear in the interface.
                 </Trans>
               </ThemedText.Link>
             </AutoColumn>
