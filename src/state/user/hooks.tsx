@@ -208,8 +208,8 @@ export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
       tokenB,
     }),
     18,
-    'UNI-V2',
-    'Uniswap V2'
+    'P00LS-LP',
+    'P00LS LP'
   )
 }
 
