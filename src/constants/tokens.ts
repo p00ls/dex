@@ -2,6 +2,9 @@ import { Ether, Token } from '@uniswap/sdk-core'
 
 import { SupportedChainId } from './chains'
 
+export const LIQUIDITY_SYMBOL = 'P00LS-LP'
+export const LIQUIDITY_NAME = 'P00LS LP'
+
 export const ZEROZERO_SYMBOL = '00'
 export const ZEROZERO_NAME = ZEROZERO_SYMBOL
 export const ZEROZERO: { [chainId: number]: Token } = {
