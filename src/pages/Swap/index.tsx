@@ -11,7 +11,6 @@ import { MouseoverTooltip, MouseoverTooltipContent } from 'components/Tooltip'
 import JSBI from 'jsbi'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown, CheckCircle, HelpCircle, Info } from 'react-feather'
-import ReactGA from 'react-ga'
 import { Text } from 'rebass'
 import styled, { ThemeContext } from 'styled-components/macro'
 
@@ -35,7 +34,6 @@ import {
 import SwapHeader from '../../components/swap/SwapHeader'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import { ApprovalState, useApproveCallbackFromTrade } from '../../hooks/useApproveCallback'
-import useENSAddress from '../../hooks/useENSAddress'
 import { useERC20PermitFromTrade, UseERC20PermitState } from '../../hooks/useERC20Permit'
 import useIsArgentWallet from '../../hooks/useIsArgentWallet'
 import { useIsSwapUnsupported } from '../../hooks/useIsSwapUnsupported'
@@ -91,7 +89,6 @@ export default function Swap() {
     inputError: wrapInputError,
   } = useWrapCallback(currencies[Field.INPUT], currencies[Field.OUTPUT], typedValue)
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
-  const { address: recipientAddress } = useENSAddress(recipient)
 
   const parsedAmounts = useMemo(
     () =>
@@ -179,14 +176,8 @@ export default function Swap() {
       }
     } else {
       await approveCallback()
-
-      ReactGA.event({
-        category: 'Swap',
-        action: 'Approve',
-        label: [trade?.inputAmount.currency.symbol, 'V2'].join('/'),
-      })
     }
-  }, [approveCallback, gatherPermitSignature, signatureState, trade?.inputAmount.currency.symbol])
+  }, [approveCallback, gatherPermitSignature, signatureState])
 
   // check if user has gone through approval process, used to show two step buttons, reset on token change
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
@@ -223,16 +214,6 @@ export default function Swap() {
     swapCallback()
       .then((hash) => {
         setSwapState({ attemptingTxn: false, tradeToConfirm, showConfirm, swapErrorMessage: undefined, txHash: hash })
-        ReactGA.event({
-          category: 'Swap',
-          action:
-            recipient === null
-              ? 'Swap w/o Send'
-              : (recipientAddress ?? recipient) === account
-              ? 'Swap w/o Send + recipient'
-              : 'Swap w/ Send',
-          label: [trade?.inputAmount?.currency?.symbol, trade?.outputAmount?.currency?.symbol, 'V2', 'MH'].join('/'),
-        })
       })
       .catch((error) => {
         setSwapState({
@@ -243,7 +224,7 @@ export default function Swap() {
           txHash: undefined,
         })
       })
-  }, [swapCallback, priceImpact, tradeToConfirm, showConfirm, recipient, recipientAddress, account, trade])
+  }, [swapCallback, priceImpact, tradeToConfirm, showConfirm])
 
   // errors
   const [showInverted, setShowInverted] = useState<boolean>(false)
@@ -294,10 +275,6 @@ export default function Swap() {
 
   const handleMaxInput = useCallback(() => {
     maxInputAmount && onUserInput(Field.INPUT, maxInputAmount.toExact())
-    ReactGA.event({
-      category: 'Swap',
-      action: 'Max',
-    })
   }, [maxInputAmount, onUserInput])
 
   const handleOutputSelect = useCallback(
@@ -398,12 +375,6 @@ export default function Swap() {
                       </ResponsiveTooltipContainer>
                     }
                     placement="bottom"
-                    onOpen={() =>
-                      ReactGA.event({
-                        category: 'Swap',
-                        action: 'Router Tooltip Open',
-                      })
-                    }
                   >
                     <AutoRow gap="4px" width="auto">
                       <AutoRouterLogo />
@@ -427,12 +398,6 @@ export default function Swap() {
                       </ResponsiveTooltipContainer>
                     }
                     placement="bottom"
-                    onOpen={() =>
-                      ReactGA.event({
-                        category: 'Swap',
-                        action: 'Transaction Details Tooltip Open',
-                      })
-                    }
                   >
                     <StyledInfo />
                   </MouseoverTooltipContent>
