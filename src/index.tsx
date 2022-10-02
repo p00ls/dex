@@ -1,7 +1,6 @@
 import '@reach/dialog/styles.css'
 import 'inter-ui'
 import 'polyfills'
-import 'components/analytics'
 
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
 import { StrictMode } from 'react'
@@ -9,6 +8,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
 
+import { AnalyticsProvider } from './components/analytics/AnalyticsContext'
 import Blocklist from './components/Blocklist'
 import { NetworkContextName } from './constants/misc'
 import { LanguageProvider } from './i18n'
@@ -46,17 +46,19 @@ ReactDOM.render(
     <Provider store={store}>
       <HashRouter>
         <LanguageProvider>
-          <Web3ReactProvider getLibrary={getLibrary}>
-            <Web3ProviderNetwork getLibrary={getLibrary}>
-              <Blocklist>
-                <Updaters />
-                <ThemeProvider>
-                  <ThemedGlobalStyle />
-                  <App />
-                </ThemeProvider>
-              </Blocklist>
-            </Web3ProviderNetwork>
-          </Web3ReactProvider>
+          <AnalyticsProvider>
+            <Web3ReactProvider getLibrary={getLibrary}>
+              <Web3ProviderNetwork getLibrary={getLibrary}>
+                <Blocklist>
+                  <Updaters />
+                  <ThemeProvider>
+                    <ThemedGlobalStyle />
+                    <App />
+                  </ThemeProvider>
+                </Blocklist>
+              </Web3ProviderNetwork>
+            </Web3ReactProvider>
+          </AnalyticsProvider>
         </LanguageProvider>
       </HashRouter>
     </Provider>

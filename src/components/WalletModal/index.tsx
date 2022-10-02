@@ -8,7 +8,6 @@ import Row, { AutoRow, RowBetween } from 'components/Row'
 import { useWalletConnectMonitoringEventCallback } from 'hooks/useMonitoringEventCallback'
 import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, Info } from 'react-feather'
-import ReactGA from 'react-ga'
 import styled from 'styled-components/macro'
 
 import MetamaskIcon from '../../assets/images/metamask.png'
@@ -22,6 +21,8 @@ import { ApplicationModal } from '../../state/application/reducer'
 import { ExternalLink, ThemedText } from '../../theme'
 import { isMobile } from '../../utils/userAgent'
 import AccountDetails from '../AccountDetails'
+import { AnalyticsEventsType } from '../analytics/events'
+import { useAnalytics } from '../analytics/hooks/useAnalytics'
 import Card, { LightCard } from '../Card'
 import Modal from '../Modal'
 import Option from './Option'
@@ -136,6 +137,7 @@ export default function WalletModal({
   confirmedTransactions: string[] // hashes of confirmed
   ENSName?: string
 }) {
+  const { trackEvent, identifyUser } = useAnalytics()
   // important that these are destructed from the account-specific web3-react context
   const { active, account, connector, activate, error } = useWeb3React()
 
@@ -186,11 +188,7 @@ export default function WalletModal({
       return true
     })
     // log selected wallet
-    ReactGA.event({
-      category: 'Wallet',
-      action: 'Change Wallet',
-      label: name,
-    })
+    await trackEvent({ type: AnalyticsEventsType.WALLET_SELECTED }, { name })
     setPendingWallet(connector) // set wallet for pending view
     setWalletView(WALLET_VIEWS.PENDING)
 
@@ -203,6 +201,7 @@ export default function WalletModal({
       activate(connector, undefined, true)
         .then(async () => {
           const walletAddress = await connector.getAccount()
+          if (walletAddress) await identifyUser(walletAddress)
           logMonitoringEvent({ walletAddress })
         })
         .catch((error) => {
