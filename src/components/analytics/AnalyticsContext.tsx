@@ -47,10 +47,7 @@ const segmentAnalytics: () => AnalyticsWrapper = () => {
 
 export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({ children }: AnalyticsProviderProps) => {
   const loadAnalytics = () => {
-    if (WRITE_KEY) {
-      return segmentAnalytics()
-    }
-    return undefined
+    return segmentAnalytics()
   }
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
