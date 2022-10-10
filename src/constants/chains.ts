@@ -35,7 +35,7 @@ export const CHAIN_INFO: ChainInfo = {
   [SupportedChainId.MAINNET]: {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
+    infoLink: 'https://info.zeroze.ro/#/',
     label: 'Ethereum',
     logoUrl: ethereumLogoUrl,
     nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
@@ -43,14 +43,14 @@ export const CHAIN_INFO: ChainInfo = {
   [SupportedChainId.RINKEBY]: {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://rinkeby.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
+    infoLink: 'https://info.zeroze.ro/#/',
     label: 'Rinkeby',
     nativeCurrency: { name: 'Rinkeby ETH', symbol: 'rinkETH', decimals: 18 },
   },
   [SupportedChainId.GOERLI]: {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://goerli.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
+    infoLink: 'https://info.zeroze.ro/#/',
     label: 'Görli',
     nativeCurrency: { name: 'Görli ETH', symbol: 'görETH', decimals: 18 },
   },
