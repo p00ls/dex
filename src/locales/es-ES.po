@@ -750,8 +750,8 @@ msgid "Expired"
 msgstr "Caducado"
 
 #: src/pages/Pool/CTACards.tsx
-msgid "Explore popular pools on Uniswap Analytics."
-msgstr "Explora los fondos comunes populares de Uniswap Analytics."
+msgid "Explore popular pools on Zerozero Analytics."
+msgstr "Explora los fondos comunes populares de Zerozero Analytics."
 
 #: src/components/Header/NetworkSelector.tsx
 msgid "Explorer"
