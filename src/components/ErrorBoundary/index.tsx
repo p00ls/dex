@@ -2,9 +2,7 @@ import { Trans } from '@lingui/macro'
 import React, { ErrorInfo } from 'react'
 import styled from 'styled-components/macro'
 
-import store, { AppState } from '../../state'
 import { ThemedText } from '../../theme'
-import { userAgent } from '../../utils/userAgent'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
 
@@ -98,68 +96,4 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
     }
     return this.props.children
   }
-}
-
-function getRelevantState(): null | keyof AppState {
-  const path = window.location.hash
-  if (!path.startsWith('#/')) {
-    return null
-  }
-  const pieces = path.substring(2).split(/[/\\?]/)
-  switch (pieces[0]) {
-    case 'swap':
-      return 'swap'
-    case 'add':
-      return 'mint'
-    case 'remove':
-      return 'burn'
-  }
-  return null
-}
-
-function issueBody(error: Error): string {
-  const relevantState = getRelevantState()
-  const deviceData = userAgent
-  return `## URL
-  
-${window.location.href}
-
-${
-  relevantState
-    ? `## \`${relevantState}\` state
-    
-\`\`\`json
-${JSON.stringify(store.getState()[relevantState], null, 2)}
-\`\`\`
-`
-    : ''
-}
-${
-  error.name &&
-  `## Error
-
-\`\`\`
-${error.name}${error.message && `: ${error.message}`}
-\`\`\`
-`
-}
-${
-  error.stack &&
-  `## Stacktrace
-
-\`\`\`
-${error.stack}
-\`\`\`
-`
-}
-${
-  deviceData &&
-  `## Device data
-
-\`\`\`json
-${JSON.stringify(deviceData, null, 2)}
-\`\`\`
-`
-}
-`
 }
