@@ -2,7 +2,7 @@ import { Trans } from '@lingui/macro'
 import React, { ErrorInfo } from 'react'
 import styled from 'styled-components/macro'
 
-import { ThemedText } from '../../theme'
+import { ExternalLink, ThemedText } from '../../theme'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
 
@@ -30,10 +30,10 @@ const CodeBlockWrapper = styled.div`
   color: ${({ theme }) => theme.text1};
 `
 
-// const LinkWrapper = styled.div`
-//   color: ${({ theme }) => theme.blue1};
-//   padding: 6px 24px;
-// `
+const LinkWrapper = styled.div`
+  color: ${({ theme }) => theme.blue1};
+  padding: 6px 24px;
+`
 
 const SomethingWentWrongWrapper = styled.div`
   padding: 6px 24px;
@@ -79,14 +79,14 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
               </CodeBlockWrapper>
               {IS_ZEROZERO ? (
                 <AutoRow>
-                  {/*<LinkWrapper>*/}
-                  {/*  <ExternalLink id="get-support-on-discord" href="https://discord.gg/FCfyBSbCU5" target="_blank">*/}
-                  {/*    <ThemedText.Link fontSize={16}>*/}
-                  {/*      <Trans>Get support on Discord</Trans>*/}
-                  {/*      <span>↗</span>*/}
-                  {/*    </ThemedText.Link>*/}
-                  {/*  </ExternalLink>*/}
-                  {/*</LinkWrapper>*/}
+                  <LinkWrapper>
+                    <ExternalLink id="join-us-on-twitter" href="https://twitter.com/zerozero_fdtn" target="_blank">
+                      <ThemedText.Link fontSize={16}>
+                        <Trans>Join up on Twitter</Trans>
+                        <span>↗</span>
+                      </ThemedText.Link>
+                    </ExternalLink>
+                  </LinkWrapper>
                 </AutoRow>
               ) : null}
             </AutoColumn>
