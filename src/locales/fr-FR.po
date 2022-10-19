@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: uniswap-interface\n"
+"Project-Id-Version: zerozero-interface\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2021-11-18 19:06\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Crowdin-Project: uniswap-interface\n"
+"X-Crowdin-Project: zerozero-interface\n"
 "X-Crowdin-Project-ID: 458284\n"
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: en-US.po\n"
@@ -195,8 +195,8 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "Autoriser les transactions à impact élevé et enlève l'écran de confirmation. À utiliser à vos risques et périls."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Autoriser le protocole Uniswap à utiliser vos {0}"
+msgid "Allow the zerozero Protocol to use your {0}"
+msgstr "Autoriser le protocole zerozero à utiliser vos {0}"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "Allowed"
@@ -264,8 +264,8 @@ msgid "Are you sure?"
 msgstr "Êtes-vous sûr(e) ?"
 
 #: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "En tant que membre de la communauté Uniswap, vous pouvez réclamer que UNI soit utilisé pour le vote et la gouvernance.<0/><1/><2>En savoir plus sur UNI</2>"
+msgid "As a member of the zerozero community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+msgstr "En tant que membre de la communauté zerozero, vous pouvez réclamer que UNI soit utilisé pour le vote et la gouvernance.<0/><1/><2>En savoir plus sur UNI</2>"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -324,7 +324,7 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "En ajoutant cette liste, vous avez implicitement confiance dans le fait que les données sont correctes. N'importe qui peut créer une liste, y compris la création de fausses versions de listes et de listes existantes qui prétendent représenter des projets qui n'en ont pas."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the Uniswap <1>Protocol Disclaimer</1>."
+msgid "By connecting a wallet, you agree to zerozero <0>Terms of Service</0> and acknowledge that you have read and understand the zerozero <1>Protocol Disclaimer</1>."
 msgstr "En connectant un portefeuille, vous acceptez les <0>Conditions d'utilisation d'</0> et reconnaissez avoir lu et compris la clause de non-responsabilité du protocole <1></1>."
 
 #: src/pages/Vote/styled.tsx
@@ -617,8 +617,8 @@ msgid "Deposit liquidity"
 msgstr "Dépôt de liquidités"
 
 #: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Déposez vos jetons de fournisseur de liquidité pour recevoir UNI, le jeton de gouvernance du protocole Uniswap."
+msgid "Deposit your Liquidity Provider tokens to receive UNI, the zerozero protocol governance token."
+msgstr "Déposez vos jetons de fournisseur de liquidité pour recevoir UNI, le jeton de gouvernance du protocole zerozero."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -661,8 +661,8 @@ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 msgstr "Vous ne voyez pas une de vos positions v2 ? <0>Importez-la.</0>"
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Les jetons UNI gagnés représentent les parts de vote dans la gouvernance Uniswap."
+msgid "Earned UNI tokens represent voting shares in zerozero governance."
+msgstr "Les jetons UNI gagnés représentent les parts de vote dans la gouvernance zerozero."
 
 #: src/components/FeeSelector/index.tsx
 msgid "Edit"
@@ -1313,8 +1313,8 @@ msgid "Read more about UNI"
 msgstr "En savoir plus sur UNI"
 
 #: src/pages/Vote/Landing.tsx
-msgid "Read more about Uniswap governance"
-msgstr "En savoir plus sur la gouvernance d'Uniswap"
+msgid "Read more about zerozero governance"
+msgstr "En savoir plus sur la gouvernance d'zerozero"
 
 #: src/pages/Pool/v2.tsx
 msgid "Read more about providing liquidity"
@@ -1525,16 +1525,16 @@ msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Échange de {0} {1} contre {2} {3}"
 
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Merci de faire partie de la communauté Uniswap <0/>"
+msgid "Thanks for being part of the zerozero community <0/>"
+msgstr "Merci de faire partie de la communauté zerozero <0/>"
 
 #: src/components/FeeSelector/index.tsx
 msgid "The % you will earn in fees."
 msgstr "Le % que vous gagnerez en frais."
 
 #: src/hooks/useSwapCallback.tsx
-msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
-msgstr "L'invariant Uniswap x*y=k n'a pas été satisfait par l'échange. Cela signifie généralement que l'un des jetons que vous échangez incorpore un comportement personnalisé lors du transfert."
+msgid "The zerozero invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
+msgstr "L'invariant zerozero x*y=k n'a pas été satisfait par l'échange. Cela signifie généralement que l'un des jetons que vous échangez incorpore un comportement personnalisé lors du transfert."
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app fetches blockchain data from The Graph’s hosted service."
@@ -1545,8 +1545,8 @@ msgid "The app fetches on-chain data and constructs contract calls with an Infur
 msgstr "L'application récupère les données en chaîne et construit des appels de contrat avec une API Infura."
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "The app fetches the optimal trade route from a Uniswap Labs server."
-msgstr "L'application récupère la route commerciale optimale à partir d'un serveur Uniswap Labs."
+msgid "The app fetches the optimal trade route from a zerozero server."
+msgstr "L'application récupère la route commerciale optimale à partir d'un serveur zerozero."
 
 #: src/components/PrivacyPolicy/index.tsx
 msgid "The app logs anonymized usage statistics in order to improve over time."
@@ -1613,8 +1613,8 @@ msgid "This token doesn't appear on the active token list(s). Make sure this is 
 msgstr "Ce jeton n'apparaît pas sur la ou les listes de jetons actifs. Assurez-vous qu'il s'agit du jeton que vous souhaitez échanger."
 
 #: src/components/SearchModal/BlockedToken.tsx
-msgid "This token is not supported in the Uniswap Labs app"
-msgstr "Ce jeton n'est pas pris en charge dans l'application Uniswap Labs"
+msgid "This token is not supported in the zerozero app"
+msgstr "Ce jeton n'est pas pris en charge dans l'application zerozero"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
@@ -1736,8 +1736,8 @@ msgid "UNI price:"
 msgstr "Prix UNI :"
 
 #: src/pages/Vote/Landing.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "Les jetons UNI représentent les parts de vote dans la gouvernance d'Uniswap. Vous pouvez voter sur chaque proposition vous-même ou déléguer vos votes à un tiers."
+msgid "UNI tokens represent voting shares in zerozero governance. You can vote on each proposal yourself or delegate your votes to a third party."
+msgstr "Les jetons UNI représentent les parts de vote dans la gouvernance d'zerozero. Vous pouvez voter sur chaque proposition vous-même ou déléguer vos votes à un tiers."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
@@ -1769,32 +1769,32 @@ msgid "Unexpected issue with estimating the gas. Please try again."
 msgstr "Problème inattendu avec l'estimation du gaz. Veuillez réessayer."
 
 #: src/pages/Vote/Landing.tsx
-msgid "Uniswap Governance"
-msgstr "Gouvernance Uniswap"
+msgid "zerozero Governance"
+msgstr "Gouvernance zerozero"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "Uniswap Labs' Terms of Service"
-msgstr "Conditions d'utilisation d'Uniswap Labs"
+msgid "zerozero Terms of Service"
+msgstr "Conditions d'utilisation d'zerozero"
 
 #: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap disponible en : <0>{0}</0>"
+msgid "zerozero available in: <0>{0}</0>"
+msgstr "zerozero disponible en : <0>{0}</0>"
 
 #: src/components/vote/ProposalEmptyState.tsx
-msgid "Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
-msgstr "La gouvernance d'Uniswap n'est disponible que sur la Layer 1. Basculez sur le réseau Ethereum Mainnet pour afficher les propositions et voter."
+msgid "zerozero governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals and Vote."
+msgstr "La gouvernance d'zerozero n'est disponible que sur la Layer 1. Basculez sur le réseau Ethereum Mainnet pour afficher les propositions et voter."
 
 #: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Uniswap minage des liquidités"
+msgid "zerozero liquidity mining"
+msgstr "zerozero minage des liquidités"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Uniswap migration contract↗"
-msgstr "Contrat de migration Uniswap↗"
+msgid "zerozero migration contract↗"
+msgstr "Contrat de migration zerozero↗"
 
 #: src/components/NetworkAlert/NetworkAlert.tsx
-msgid "Uniswap on {0}"
-msgstr "Uniswap sur {0}"
+msgid "zerozero on {0}"
+msgstr "zerozero sur {0}"
 
 #: src/components/SearchModal/TokenImportCard.tsx
 msgid "Unknown Source"
@@ -1848,8 +1848,8 @@ msgid "Update list"
 msgstr "Mettre à jour la liste"
 
 #: src/components/Settings/index.tsx
-msgid "Use the Uniswap Labs API to get better pricing through a more efficient route."
-msgstr "Utilisez l'API Uniswap Labs pour obtenir de meilleurs prix grâce à un itinéraire plus efficace."
+msgid "Use the zerozero API to get better pricing through a more efficient route."
+msgstr "Utilisez l'API zerozero pour obtenir de meilleurs prix grâce à un itinéraire plus efficace."
 
 #: src/components/claim/ClaimModal.tsx
 msgid "User"
@@ -2016,8 +2016,8 @@ msgid "You are creating a pool"
 msgstr "Vous êtes en train de créer un pool"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-msgstr "Vous êtes le premier fournisseur de liquidités pour ce pool V3 d'Uniswap. Votre liquidité migrera au prix actuel de {0}."
+msgid "You are the first liquidity provider for this zerozero V3 pool. Your liquidity will migrate at the current {0} price."
+msgstr "Vous êtes le premier fournisseur de liquidités pour ce pool V3 d'zerozero. Votre liquidité migrera au prix actuel de {0}."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "You are the first liquidity provider."
@@ -2052,16 +2052,16 @@ msgid "You must connect an account."
 msgstr "Vous devez connecter un compte."
 
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Vous devez autoriser les contrats intelligents Uniswap à utiliser votre {0}. Vous n'avez à le faire qu'une seule fois par jeton."
+msgid "You must give the zerozero smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr "Vous devez autoriser les contrats intelligents zerozero à utiliser votre {0}. Vous n'avez à le faire qu'une seule fois par jeton."
 
 #: src/pages/CreateProposal/index.tsx
 msgid "You must have {formattedProposalThreshold} votes to submit a proposal"
 msgstr "Vous devez avoir {formattedProposalThreshold} votes pour soumettre une proposition"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-msgstr "Vous ne devriez déposer de liquidité dans Uniswap V3 qu'à un prix que vous croyez correct. <0/>Si le prix semble incorrect, vous pouvez soit faire un swap pour déplacer le prix soit attendre que quelqu'un d'autre le fasse."
+msgid "You should only deposit liquidity into zerozero V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
+msgstr "Vous ne devriez déposer de liquidité dans zerozero V3 qu'à un prix que vous croyez correct. <0/>Si le prix semble incorrect, vous pouvez soit faire un swap pour déplacer le prix soit attendre que quelqu'un d'autre le fasse."
 
 #: src/pages/RemoveLiquidity/V3.tsx
 msgid "You will also collect fees earned from this position."

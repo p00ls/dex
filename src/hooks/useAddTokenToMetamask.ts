@@ -26,7 +26,7 @@ export default function useAddTokenToMetamask(currencyToAdd: Currency | undefine
               address: token.address,
               symbol: token.symbol,
               decimals: token.decimals,
-              image: getTokenLogoURL(token.address),
+              image: token.symbol ? getTokenLogoURL(token.symbol) : undefined,
             },
           },
         })

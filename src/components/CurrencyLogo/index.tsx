@@ -10,18 +10,13 @@ import Logo from '../Logo'
 
 type Network = 'ethereum' | 'arbitrum' | 'optimism'
 
-function chainIdToNetworkName(networkId: SupportedChainId): Network {
-  return 'ethereum'
-}
-
 export const getTokenLogoURL = (
-  address: string,
+  symbol: string,
   chainId: SupportedChainId = SupportedChainId.MAINNET
 ): string | void => {
-  const networkName = chainIdToNetworkName(chainId)
   const networksWithUrls = [SupportedChainId.MAINNET]
   if (networksWithUrls.includes(chainId)) {
-    return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
+    return `https://tokens-assets.prod.p00ls.io/${symbol}/token.png`
   }
 }
 
@@ -57,7 +52,7 @@ export default function CurrencyLogo({
 
     if (currency.isToken) {
       const defaultUrls = []
-      const url = getTokenLogoURL(currency.address, currency.chainId)
+      const url = currency.symbol ? getTokenLogoURL(currency.symbol, currency.chainId) : undefined
       if (url) {
         defaultUrls.push(url)
       }

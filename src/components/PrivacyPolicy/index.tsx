@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 import Card, { DarkGreyCard } from 'components/Card'
-import Row, { AutoRow, RowBetween } from 'components/Row'
+import { AutoRow, RowBetween } from 'components/Row'
 import { useRef } from 'react'
 import { ArrowDown, Info, X } from 'react-feather'
 import styled from 'styled-components/macro'
@@ -47,29 +47,22 @@ const StyledLinkOut = styled(ArrowDown)`
 
 const EXTERNAL_APIS = [
   {
-    name: 'Auto Router',
-    description: <Trans>The app fetches the optimal trade route from a Uniswap Labs server.</Trans>,
-  },
-  {
     name: 'Infura',
     description: <Trans>The app fetches on-chain data and constructs contract calls with an Infura API.</Trans>,
   },
   {
-    name: 'TRM Labs',
+    name: 'Chainalysis',
     description: (
       <>
         <Trans>
-          The app securely collects your wallet address and shares it with TRM Labs Inc. for risk and compliance
+          The app securely collects your wallet address and shares it with Chainalysis Inc. for risk and compliance
           reasons.
         </Trans>{' '}
-        <ExternalLink href="https://help.uniswap.org/en/articles/5675203-terms-of-service-faq">
-          <Trans>Learn more</Trans>
-        </ExternalLink>
       </>
     ),
   },
   {
-    name: 'Google Analytics',
+    name: 'Segment.io',
     description: <Trans>The app logs anonymized usage statistics in order to improve over time.</Trans>,
   },
   {
@@ -119,7 +112,7 @@ export function PrivacyPolicy() {
                 <AutoRow gap="4px">
                   <Info size={20} />
                   <ThemedText.Main fontSize={14} color={'primaryText1'}>
-                    <Trans>Uniswap Labs&apos; Terms of Service</Trans>
+                    <Trans>zerozero&apos; Terms of Service</Trans>
                   </ThemedText.Main>
                 </AutoRow>
                 <StyledLinkOut size={20} />
@@ -144,11 +137,6 @@ export function PrivacyPolicy() {
               </AutoColumn>
             </DarkGreyCard>
           ))}
-          <Row justify="center" marginBottom="1rem">
-            <ExternalLink href="https://help.uniswap.org/en/articles/5675203-terms-of-service-faq">
-              <Trans>Learn more</Trans>
-            </ExternalLink>
-          </Row>
         </AutoColumn>
       </AutoColumn>
     </Wrapper>

@@ -466,7 +466,7 @@ export default function Swap() {
                           {approvalState === ApprovalState.APPROVED || signatureState === UseERC20PermitState.SIGNED ? (
                             <Trans>You can now trade {currencies[Field.INPUT]?.symbol}</Trans>
                           ) : (
-                            <Trans>Allow the Uniswap Protocol to use your {currencies[Field.INPUT]?.symbol}</Trans>
+                            <Trans>Allow the zerozero Protocol to use your {currencies[Field.INPUT]?.symbol}</Trans>
                           )}
                         </span>
                         {approvalState === ApprovalState.PENDING ? (
@@ -478,7 +478,7 @@ export default function Swap() {
                           <MouseoverTooltip
                             text={
                               <Trans>
-                                You must give the Uniswap smart contracts permission to use your{' '}
+                                You must give the zerozero smart contracts permission to use your{' '}
                                 {currencies[Field.INPUT]?.symbol}. You only have to do this once per token.
                               </Trans>
                             }
