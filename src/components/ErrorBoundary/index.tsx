@@ -3,7 +3,7 @@ import React, { ErrorInfo } from 'react'
 import styled from 'styled-components/macro'
 
 import store, { AppState } from '../../state'
-import { ExternalLink, ThemedText } from '../../theme'
+import { ThemedText } from '../../theme'
 import { userAgent } from '../../utils/userAgent'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
@@ -32,10 +32,10 @@ const CodeBlockWrapper = styled.div`
   color: ${({ theme }) => theme.text1};
 `
 
-const LinkWrapper = styled.div`
-  color: ${({ theme }) => theme.blue1};
-  padding: 6px 24px;
-`
+// const LinkWrapper = styled.div`
+//   color: ${({ theme }) => theme.blue1};
+//   padding: 6px 24px;
+// `
 
 const SomethingWentWrongWrapper = styled.div`
   padding: 6px 24px;
@@ -45,7 +45,7 @@ type ErrorBoundaryState = {
   error: Error | null
 }
 
-const IS_UNISWAP = window.location.hostname === 'app.zeroze.ro'
+const IS_ZEROZERO = window.location.hostname === 'app.zerozero.markets'
 
 export default class ErrorBoundary extends React.Component<unknown, ErrorBoundaryState> {
   constructor(props: unknown) {
@@ -65,7 +65,6 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
     const { error } = this.state
 
     if (error !== null) {
-      const encodedBody = encodeURIComponent(issueBody(error))
       return (
         <FallbackWrapper>
           <BodyWrapper>
@@ -80,30 +79,16 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
                   <ThemedText.Main fontSize={10}>{error.stack}</ThemedText.Main>
                 </code>
               </CodeBlockWrapper>
-              {IS_UNISWAP ? (
+              {IS_ZEROZERO ? (
                 <AutoRow>
-                  <LinkWrapper>
-                    <ExternalLink
-                      id="create-github-issue-link"
-                      href={`https://github.com/Uniswap/uniswap-interface/issues/new?assignees=&labels=bug&body=${encodedBody}&title=${encodeURIComponent(
-                        `Crash report: \`${error.name}${error.message && `: ${error.message}`}\``
-                      )}`}
-                      target="_blank"
-                    >
-                      <ThemedText.Link fontSize={16}>
-                        <Trans>Create an issue on GitHub</Trans>
-                        <span>↗</span>
-                      </ThemedText.Link>
-                    </ExternalLink>
-                  </LinkWrapper>
-                  <LinkWrapper>
-                    <ExternalLink id="get-support-on-discord" href="https://discord.gg/FCfyBSbCU5" target="_blank">
-                      <ThemedText.Link fontSize={16}>
-                        <Trans>Get support on Discord</Trans>
-                        <span>↗</span>
-                      </ThemedText.Link>
-                    </ExternalLink>
-                  </LinkWrapper>
+                  {/*<LinkWrapper>*/}
+                  {/*  <ExternalLink id="get-support-on-discord" href="https://discord.gg/FCfyBSbCU5" target="_blank">*/}
+                  {/*    <ThemedText.Link fontSize={16}>*/}
+                  {/*      <Trans>Get support on Discord</Trans>*/}
+                  {/*      <span>↗</span>*/}
+                  {/*    </ThemedText.Link>*/}
+                  {/*  </ExternalLink>*/}
+                  {/*</LinkWrapper>*/}
                 </AutoRow>
               ) : null}
             </AutoColumn>

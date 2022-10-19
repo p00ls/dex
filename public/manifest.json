@@ -1,8 +1,8 @@
 {
   "background_color": "#fff",
   "display": "standalone",
-  "homepage_url": "https://dex.zeroze.ro",
-  "providedBy": { "name": "00", "url": "https://www.zeroze.ro" },
+  "homepage_url": "https://app.zerozero.markets",
+  "providedBy": { "name": "00", "url": "https://www.zerozero.markets" },
   "icons": [
     {
       "src": "./images/192x192_App_Icon.png",
