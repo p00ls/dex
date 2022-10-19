@@ -8,8 +8,6 @@ import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
-type Network = 'ethereum' | 'arbitrum' | 'optimism'
-
 export const getTokenLogoURL = (
   symbol: string,
   chainId: SupportedChainId = SupportedChainId.MAINNET
