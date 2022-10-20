@@ -4,7 +4,7 @@ import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sd
 import JSBI from 'jsbi'
 import { useMemo, useState } from 'react'
 
-import { LIQUIDITY_PROVIDER_TOKEN_NAME, ZEROZERO, ZEROZERO_NAME } from '../constants/tokens'
+import { LIQUIDITY_PROVIDER_TOKEN_NAME } from '../constants/tokens'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useEIP2612Contract } from './useContract'
 import useIsArgentWallet from './useIsArgentWallet'
@@ -32,10 +32,10 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  1: { [ZEROZERO[1].address]: { type: PermitType.AMOUNT, name: ZEROZERO_NAME, version: '1' } },
-  4: { [ZEROZERO[4].address]: { type: PermitType.AMOUNT, name: ZEROZERO_NAME, version: '1' } },
+  1: {},
+  4: {},
   3: {},
-  5: { [ZEROZERO[5].address]: { type: PermitType.AMOUNT, name: ZEROZERO_NAME, version: '1' } },
+  5: {},
   42: {},
 }
 
