@@ -4,6 +4,7 @@ import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sd
 import JSBI from 'jsbi'
 import { useMemo, useState } from 'react'
 
+import { LIQUIDITY_PROVIDER_TOKEN_NAME, ZEROZERO, ZEROZERO_NAME } from '../constants/tokens'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useEIP2612Contract } from './useContract'
 import useIsArgentWallet from './useIsArgentWallet'
@@ -31,10 +32,10 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  1: {},
-  4: {},
+  1: { [ZEROZERO[1].address]: { type: PermitType.AMOUNT, name: ZEROZERO_NAME, version: '1' } },
+  4: { [ZEROZERO[4].address]: { type: PermitType.AMOUNT, name: ZEROZERO_NAME, version: '1' } },
   3: {},
-  5: {},
+  5: { [ZEROZERO[5].address]: { type: PermitType.AMOUNT, name: ZEROZERO_NAME, version: '1' } },
   42: {},
 }
 
@@ -243,7 +244,7 @@ function useERC20Permit(
 
 const REMOVE_V2_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'P00ls LP Token',
+  name: LIQUIDITY_PROVIDER_TOKEN_NAME,
   type: PermitType.AMOUNT,
 }
 

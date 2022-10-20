@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from 'state/hooks'
 
 import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../../constants/addresses'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants/routing'
-import { LIQUIDITY_NAME, LIQUIDITY_SYMBOL } from '../../constants/tokens'
+import { LIQUIDITY_PROVIDER_TOKEN_NAME, LIQUIDITY_PROVIDER_TOKEN_SYMBOL } from '../../constants/tokens'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { AppState } from '../index'
@@ -209,8 +209,8 @@ export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
       tokenB,
     }),
     18,
-    LIQUIDITY_SYMBOL,
-    LIQUIDITY_NAME
+    LIQUIDITY_PROVIDER_TOKEN_SYMBOL,
+    LIQUIDITY_PROVIDER_TOKEN_NAME
   )
 }
 

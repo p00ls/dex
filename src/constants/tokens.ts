@@ -2,8 +2,10 @@ import { Ether, Token } from '@uniswap/sdk-core'
 
 import { SupportedChainId } from './chains'
 
-export const LIQUIDITY_SYMBOL = 'P00LS-LP'
-export const LIQUIDITY_NAME = 'P00LS LP'
+export const LIQUIDITY_PROVIDER_TOKEN_SYMBOL = 'P00ls-LP'
+export const LIQUIDITY_PROVIDER_TOKEN_NAME = 'P00ls LP Token'
+// export const liquidityProviderTokenSymbol = (tokenA: Token, tokenB: Token) => `${tokenA.symbol}/${tokenB.symbol} LP`
+// export const LIQUIDITY_PROVIDER_TOKEN_NAME = '00 DEX LP Token'
 
 export const ZEROZERO_SYMBOL = '00'
 export const ZEROZERO_NAME = ZEROZERO_SYMBOL
