@@ -87,6 +87,14 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
                       </ThemedText.Link>
                     </ExternalLink>
                   </LinkWrapper>
+                  <LinkWrapper>
+                    <ExternalLink id="get-support-on-discord" href="https://discord.gg/p00ls" target="_blank">
+                      <ThemedText.Link fontSize={16}>
+                        <Trans>Get support on Discord</Trans>
+                        <span>↗</span>
+                      </ThemedText.Link>
+                    </ExternalLink>
+                  </LinkWrapper>
                 </AutoRow>
               ) : null}
             </AutoColumn>
