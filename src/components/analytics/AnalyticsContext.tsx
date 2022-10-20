@@ -1,6 +1,6 @@
 import { AnalyticsSnippet } from '@segment/analytics-next'
 import { min } from '@segment/snippet'
-import React, { createContext, useMemo } from 'react'
+import React, { createContext, useEffect, useMemo } from 'react'
 
 import { AnalyticsEvent, getEventName } from './events'
 
@@ -57,18 +57,23 @@ export const AnalyticsProvider: React.FC<AnalyticsProviderProps> = ({ children }
     return min({
       apiKey: WRITE_KEY,
       page: {},
-      load: false,
+      load: true,
     })
   }
 
-  return (
-    <AnalyticsContext.Provider value={a}>
-      {children}
-      {WRITE_KEY && (
-        <>
-          <script id="segment" dangerouslySetInnerHTML={{ __html: segmentSnippet() }} />
-        </>
-      )}
-    </AnalyticsContext.Provider>
-  )
+  useEffect(() => {
+    if (!WRITE_KEY) return
+
+    const script = document.createElement('script')
+    script.text = segmentSnippet()
+    script.async = true
+
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  })
+
+  return <AnalyticsContext.Provider value={a}>{children}</AnalyticsContext.Provider>
 }
