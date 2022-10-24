@@ -2,6 +2,7 @@ import '@reach/dialog/styles.css'
 import 'inter-ui'
 import 'polyfills'
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
@@ -23,6 +24,7 @@ import TransactionUpdater from './state/transactions/updater'
 import ThemeProvider, { ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
 
+const queryClient = new QueryClient()
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
 if (!!window.ethereum) {
@@ -43,25 +45,27 @@ function Updaters() {
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={store}>
-      <HashRouter>
-        <LanguageProvider>
-          <AnalyticsProvider>
-            <Web3ReactProvider getLibrary={getLibrary}>
-              <Web3ProviderNetwork getLibrary={getLibrary}>
-                <Blocklist>
-                  <Updaters />
-                  <ThemeProvider>
-                    <ThemedGlobalStyle />
-                    <App />
-                  </ThemeProvider>
-                </Blocklist>
-              </Web3ProviderNetwork>
-            </Web3ReactProvider>
-          </AnalyticsProvider>
-        </LanguageProvider>
-      </HashRouter>
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <HashRouter>
+          <LanguageProvider>
+            <AnalyticsProvider>
+              <Web3ReactProvider getLibrary={getLibrary}>
+                <Web3ProviderNetwork getLibrary={getLibrary}>
+                  <Blocklist>
+                    <Updaters />
+                    <ThemeProvider>
+                      <ThemedGlobalStyle />
+                      <App />
+                    </ThemeProvider>
+                  </Blocklist>
+                </Web3ProviderNetwork>
+              </Web3ReactProvider>
+            </AnalyticsProvider>
+          </LanguageProvider>
+        </HashRouter>
+      </Provider>
+    </QueryClientProvider>
   </StrictMode>,
   document.getElementById('root')
 )
