@@ -27,3 +27,11 @@ jobs:
       group: ${{ inputs.env}}
       cancel-in-progress: true
     secrets: inherit
+  purge_fastly:
+    needs: [ deploy_prod ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jcoene/fastly-purge-action@v1
+        with:
+          api_key: '${{ secrets.FASTLY_API_KEY }}'
+          service_id: '${{ secrets.FASTLY_SERVICE_ID }}'
