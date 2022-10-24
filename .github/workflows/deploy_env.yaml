@@ -11,6 +11,13 @@ on:
         required: false
         default: 'latest'
         type: string
+    secrets:
+      PROJECT_ID:
+        required: true
+      GCLOUD_SA:
+        required: true
+      BUCKET_NAME:
+        required: true
 jobs:
   deploy:
     name: Deploy
