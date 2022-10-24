@@ -48,5 +48,7 @@ jobs:
     with:
       env: devel
       ref: ${{ github.sha }}
-      bucket_name: ${{ secrets.BUCKET_NAME_DEVEL }}
-    secrets: inherit
+    secrets:
+      PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      GCLOUD_SA: ${{ secrets.GCLOUD_SA }}
+      BUCKET_NAME: ${{ secrets.BUCKET_NAME_DEVEL }}

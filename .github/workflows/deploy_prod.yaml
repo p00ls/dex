@@ -23,8 +23,10 @@ jobs:
     with:
       env: ${{ inputs.env }}
       ref: ${{ inputs.ref }}
-      default: ${{ secrets.BUCKET_NAME_PROD }}
     concurrency:
       group: ${{ inputs.env}}
       cancel-in-progress: true
-    secrets: inherit
+    secrets:
+      PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      GCLOUD_SA: ${{ secrets.GCLOUD_SA }}
+      BUCKET_NAME: ${{ secrets.BUCKET_NAME_PROD }}
