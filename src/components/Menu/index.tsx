@@ -5,7 +5,7 @@ import { LOCALE_LABEL, SUPPORTED_LOCALES, SupportedLocale } from 'constants/loca
 import { useActiveLocale } from 'hooks/useActiveLocale'
 import { useLocationLinkProps } from 'hooks/useLocationLinkProps'
 import React, { useEffect, useRef, useState } from 'react'
-import { Check, ChevronLeft, FileText, Globe, Info } from 'react-feather'
+import { Check, ChevronLeft, FileText, Globe } from 'react-feather'
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components/macro'
 
@@ -215,12 +215,12 @@ export default function Menu() {
               default:
                 return (
                   <MenuFlyout>
-                    <MenuItem href="https://www.zerozero.markets">
-                      <div>
-                        <Trans>About</Trans>
-                      </div>
-                      <Info opacity={0.6} size={16} />
-                    </MenuItem>
+                    {/*<MenuItem href="https://www.zerozero.markets">*/}
+                    {/*  <div>*/}
+                    {/*    <Trans>About</Trans>*/}
+                    {/*  </div>*/}
+                    {/*  <Info opacity={0.6} size={16} />*/}
+                    {/*</MenuItem>*/}
                     <ToggleMenuItem onClick={() => setMenu('lang')}>
                       <div>
                         <Trans>Language</Trans>

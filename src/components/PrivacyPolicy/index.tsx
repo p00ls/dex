@@ -107,12 +107,27 @@ export function PrivacyPolicy() {
       <AutoColumn gap="16px">
         <AutoColumn gap="8px" style={{ width: '100%' }}>
           <StyledExternalCard>
-            <ExternalLink href={'https://uniswap.org/terms-of-service'}>
+            <ExternalLink href={'https://app.zerozero.markets/ZZ Liquidity - Website Terms of Use.pdf'}>
               <RowBetween>
                 <AutoRow gap="4px">
                   <Info size={20} />
                   <ThemedText.Main fontSize={14} color={'primaryText1'}>
                     <Trans>zerozero Terms of Service</Trans>
+                  </ThemedText.Main>
+                </AutoRow>
+                <StyledLinkOut size={20} />
+              </RowBetween>
+            </ExternalLink>
+          </StyledExternalCard>
+        </AutoColumn>
+        <AutoColumn gap="8px" style={{ width: '100%' }}>
+          <StyledExternalCard>
+            <ExternalLink href={'https://app.zerozero.markets/ZZ Liquidity Privacy Policy.pdf'}>
+              <RowBetween>
+                <AutoRow gap="4px">
+                  <Info size={20} />
+                  <ThemedText.Main fontSize={14} color={'primaryText1'}>
+                    <Trans>zerozero Privacy Policy</Trans>
                   </ThemedText.Main>
                 </AutoRow>
                 <StyledLinkOut size={20} />
