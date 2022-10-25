@@ -1,4 +1,3 @@
-import { AddressBlocked } from 'components/AddressBlocked'
 import Loader from 'components/Loader'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 import { Suspense } from 'react'
@@ -28,7 +27,7 @@ const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 120px 16px 0px 16px;
+  padding: 120px 16px 0 16px;
   align-items: center;
   flex: 1;
   z-index: 1;
@@ -62,32 +61,30 @@ export default function App() {
             <Header />
           </HeaderWrapper>
           <BodyWrapper>
-            <AddressBlocked>
-              <Popups />
-              <Polling />
-              <Suspense fallback={<Loader />}>
-                <Switch>
-                  <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
-                  <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
-                  <Route exact strict path="/swap" component={Swap} />
+            <Popups />
+            <Polling />
+            <Suspense fallback={<Loader />}>
+              <Switch>
+                <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
+                <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
+                <Route exact strict path="/swap" component={Swap} />
 
-                  <Route exact strict path="/pool/v2/find" component={PoolFinder} />
-                  <Route exact strict path="/pool/v2" component={PoolV2} />
+                <Route exact strict path="/pool/v2/find" component={PoolFinder} />
+                <Route exact strict path="/pool/v2" component={PoolV2} />
 
-                  <Route
-                    exact
-                    strict
-                    path="/add/v2/:currencyIdA?/:currencyIdB?"
-                    component={RedirectDuplicateTokenIdsV2}
-                  />
+                <Route
+                  exact
+                  strict
+                  path="/add/v2/:currencyIdA?/:currencyIdB?"
+                  component={RedirectDuplicateTokenIdsV2}
+                />
 
-                  <Route exact strict path="/remove/v2/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
+                <Route exact strict path="/remove/v2/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
 
-                  <Route component={RedirectPathToSwapOnly} />
-                </Switch>
-              </Suspense>
-              <Marginer />
-            </AddressBlocked>
+                <Route component={RedirectPathToSwapOnly} />
+              </Switch>
+            </Suspense>
+            <Marginer />
           </BodyWrapper>
         </AppWrapper>
       </Web3ReactManager>

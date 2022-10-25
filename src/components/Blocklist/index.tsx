@@ -1,6 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { ReactNode, useMemo } from 'react'
 
+import { useAddressAllowed } from '../../hooks/useAddressAllowed'
 import { useActiveWeb3React } from '../../hooks/web3'
 
 // SDN OFAC addresses
@@ -24,11 +25,17 @@ const BLOCKED_ADDRESSES: string[] = [
 
 export default function Blocklist({ children }: { children: ReactNode }) {
   const { account } = useActiveWeb3React()
-  const blocked: boolean = useMemo(() => Boolean(account && BLOCKED_ADDRESSES.indexOf(account) !== -1), [account])
+  const isAllowed = useAddressAllowed(account)
+  const blocked: boolean = useMemo(
+    () => Boolean(account && (BLOCKED_ADDRESSES.indexOf(account) !== -1 || !isAllowed)),
+    [account, isAllowed]
+  )
   if (blocked) {
     return (
-      <div>
-        <Trans>Blocked address</Trans>
+      <div style={{ color: 'white', textAlign: 'center' }}>
+        <Trans>
+          This address is blocked on the 00 DEX because it is associated with one or more blocked activities.
+        </Trans>
       </div>
     )
   }
