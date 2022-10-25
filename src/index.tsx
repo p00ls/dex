@@ -11,6 +11,7 @@ import { HashRouter } from 'react-router-dom'
 
 import { AnalyticsProvider } from './components/analytics/AnalyticsContext'
 import Blocklist from './components/Blocklist'
+import { TermsOfUse } from './components/TermsOfUse'
 import { NetworkContextName } from './constants/misc'
 import { LanguageProvider } from './i18n'
 import App from './pages/App'
@@ -53,11 +54,13 @@ ReactDOM.render(
               <Web3ReactProvider getLibrary={getLibrary}>
                 <Web3ProviderNetwork getLibrary={getLibrary}>
                   <Blocklist>
-                    <Updaters />
-                    <ThemeProvider>
-                      <ThemedGlobalStyle />
-                      <App />
-                    </ThemeProvider>
+                    <TermsOfUse>
+                      <Updaters />
+                      <ThemeProvider>
+                        <ThemedGlobalStyle />
+                        <App />
+                      </ThemeProvider>
+                    </TermsOfUse>
                   </Blocklist>
                 </Web3ProviderNetwork>
               </Web3ReactProvider>
