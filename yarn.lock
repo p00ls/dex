@@ -2727,10 +2727,10 @@
     jest-validate "^26.5.2"
     lodash.get "^4.4.2"
 
-"@lingui/core@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.npmjs.org/@lingui/core/-/core-3.9.0.tgz"
-  integrity sha512-tbOBqou4fPzHB5aivir1fuikFoMYFcvpWk68Pysg34KN0xagPtyj0Dnz3clmq6Vnuf4SaK4LJdXwNUPWXpah7A==
+"@lingui/core@*", "@lingui/core@^3.9.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@lingui/core/-/core-3.14.0.tgz#62e6b5e3d17b3f2ecd84b3f821d591763055aa89"
+  integrity sha512-ertREq9oi9B/umxpd/pInm9uFO8FLK2/0FXfDmMqvH5ydswWn/c9nY5YO4W1h4/8LWO45mewypOIyjoue4De1w==
   dependencies:
     "@babel/runtime" "^7.11.2"
     make-plural "^6.2.2"
@@ -4462,10 +4462,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/lingui__core@*", "@types/lingui__core@^2.7.1":
-  version "2.7.1"
-  resolved "https://registry.npmjs.org/@types/lingui__core/-/lingui__core-2.7.1.tgz"
-  integrity sha512-zfJoKAfgYyk00s1xuMqyIbQdxw4OI0G5hFsc1ARU+zv+2WCPjlPh+CfPEu3iOm1GSdOjj3vpu7E+JTGjMW+fzA==
+"@types/lingui__core@*", "@types/lingui__core@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/lingui__core/-/lingui__core-3.0.0.tgz#2bc0d453348e415f72972620f54d3481e62127b9"
+  integrity sha512-bqnrxAI9GzQcG1fx8vmFB8hH1Pl53u2Jox4wzsqEPRDerqCbEkpd8mLOTFPMRAbbQZgWck2tIKYV4N/PSExCFg==
+  dependencies:
+    "@lingui/core" "*"
 
 "@types/lingui__macro@^2.7.4":
   version "2.7.4"
