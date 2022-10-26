@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled, { ThemeContext } from 'styled-components/macro'
 
-import { ButtonPrimary } from '../../components/Button'
+import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
 import Card from '../../components/Card'
 import { AutoColumn } from '../../components/Column'
 import { SwapPoolTabs } from '../../components/NavigationTabs'
@@ -17,7 +17,7 @@ import { useV2Pairs } from '../../hooks/useV2Pairs'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { HideSmall, ThemedText } from '../../theme'
+import { ExternalLink, HideSmall, ThemedText } from '../../theme'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
@@ -137,16 +137,16 @@ export default function Pool() {
                 </EmptyProposals>
               ) : allV2PairsWithLiquidity?.length > 0 ? (
                 <>
-                  {/*<ButtonSecondary>*/}
-                  {/*  <RowBetween>*/}
-                  {/*    <Trans>*/}
-                  {/*      <ExternalLink href={'https://info.zerozero.markets/account/' + account}>*/}
-                  {/*        Account analytics and accrued fees*/}
-                  {/*      </ExternalLink>*/}
-                  {/*      <span> ↗ </span>*/}
-                  {/*    </Trans>*/}
-                  {/*  </RowBetween>*/}
-                  {/*</ButtonSecondary>*/}
+                  <ButtonSecondary>
+                    <RowBetween>
+                      <Trans>
+                        <ExternalLink href={'https://info.zerozero.markets/account/' + account}>
+                          Account analytics and accrued fees
+                        </ExternalLink>
+                        <span> ↗ </span>
+                      </Trans>
+                    </RowBetween>
+                  </ButtonSecondary>
                   {allV2PairsWithLiquidity.map((v2Pair) => (
                     <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
                   ))}
