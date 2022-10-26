@@ -63,7 +63,7 @@ export const TermsOfUseView: React.FC<Props> = ({ accept }: Props) => {
       <Title>Welcome to the 00 DEX</Title>
 
       <Subtitle my={30} mx={80}>
-        Your access to and use of this site is subject to the Terms of Use.{' '}
+        Your access to and use of this site is subject to the Terms of Use.
       </Subtitle>
 
       <Info my={30}>

@@ -1,5 +1,8 @@
+import { ACCEPTED_TERMS_OF_USE_COOKIE } from '../../src/components/TermsOfUse/constants'
+
 describe('Swap', () => {
   beforeEach(() => {
+    cy.setCookie(ACCEPTED_TERMS_OF_USE_COOKIE, '1')
     cy.visit('/swap')
   })
   it('can enter an amount into input', () => {

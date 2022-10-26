@@ -1,7 +1,11 @@
+import { ACCEPTED_TERMS_OF_USE_COOKIE } from '../../src/components/TermsOfUse/constants'
 import { TEST_ADDRESS_NEVER_USE_SHORTENED } from '../support/commands'
 
 describe('Landing Page', () => {
-  beforeEach(() => cy.visit('/'))
+  beforeEach(() => {
+    cy.setCookie(ACCEPTED_TERMS_OF_USE_COOKIE, '1')
+    cy.visit('/')
+  })
   it('loads swap page', () => {
     cy.get('#swap-page')
     cy.screenshot()

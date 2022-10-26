@@ -1,4 +1,9 @@
+import { ACCEPTED_TERMS_OF_USE_COOKIE } from '../../src/components/TermsOfUse/constants'
+
 describe('Remove Liquidity', () => {
+  beforeEach(() => {
+    cy.setCookie(ACCEPTED_TERMS_OF_USE_COOKIE, '1')
+  })
   it('00 remove', () => {
     cy.visit('/remove/v2/00/0x677c9fe4396d3d13a0f9013a8118eae386c843a5')
     cy.get('#remove-liquidity-tokena-symbol').should('contain.text', '00')

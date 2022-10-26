@@ -1,3 +1,4 @@
+import { ACCEPTED_TERMS_OF_USE_COOKIE } from '../../src/components/TermsOfUse/constants'
 import { aliasQuery } from '../utils/graphql-test-utils'
 
 describe('Add Liquidity', () => {
@@ -5,6 +6,7 @@ describe('Add Liquidity', () => {
     cy.intercept('POST', '/subgraphs/name/uniswap/uniswap-v3', (req) => {
       aliasQuery(req, 'feeTierDistribution')
     })
+    cy.setCookie(ACCEPTED_TERMS_OF_USE_COOKIE, '1')
   })
 
   it('loads the two correct tokens', () => {
