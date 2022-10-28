@@ -34,9 +34,10 @@ jobs:
   build:
     name: Build artifact
     uses: ./.github/workflows/build.yaml
-    secrets:
+    with:
       env: devel
-      PACKAGES_ACCESS: ${{ secrets.GITHUB_TOKEN}}
+    secrets:
+      PACKAGES_ACCESS: ${{ secrets.GITHUB_TOKEN }}
   deploy_devel:
     if: github.ref == 'refs/heads/main'
     needs:
