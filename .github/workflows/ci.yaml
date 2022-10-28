@@ -36,8 +36,7 @@ jobs:
     uses: ./.github/workflows/build.yaml
     with:
       env: devel
-    secrets:
-      PACKAGES_ACCESS: ${{ secrets.GITHUB_TOKEN }}
+    secrets: inherit
   deploy_devel:
     if: github.ref == 'refs/heads/main'
     needs:
