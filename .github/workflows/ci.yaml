@@ -36,6 +36,9 @@ jobs:
     uses: ./.github/workflows/build.yaml
     with:
       env: devel
+    concurrency:
+      group: devel
+      cancel-in-progress: true
     secrets: inherit
   deploy_devel:
     if: github.ref == 'refs/heads/main'
