@@ -21,7 +21,7 @@
     "@lingui/macro": "^3.9.0",
     "@lingui/react": "^3.9.0",
     "@metamask/jazzicon": "^2.0.0",
-    "@p00ls/uniswap-v2-sdk": "3.0.5",
+    "@p00ls/uniswap-v2-sdk": "3.0.6",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
