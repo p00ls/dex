@@ -6,9 +6,9 @@ on:
         description: environment
         required: true
         type: choice
-        default: 'prod'
+        default: 'production'
         options:
-          - 'prod'
+          - 'production'
           - 'devel'
       ref:
         description: SHA1 to checkout
@@ -17,6 +17,15 @@ on:
         type: string
 
 jobs:
+  build_prod: 
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/build.yaml
+    with:
+      env: ${{ inputs.env }}
+    concurrency:
+      group: ${{ inputs.env }}
+      cancel-in-progress: true
+    secrets: inherit
   deploy_prod:
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy_env.yaml

@@ -1,6 +1,11 @@
 name: Build Javascript
 on:
   workflow_call:
+    inputs:
+      env:
+        description: environment to build
+        required: true
+        type: string
     secrets:
       PACKAGES_ACCESS:
         required: true
@@ -23,9 +28,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_ACCESS }}
       - name: Build
-        run: yarn build
+        run: yarn build:${{ inputs.env }}
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
-          name: build
+          name: build_${{ inputs.env }}
           path: build

@@ -4,6 +4,7 @@ import 'polyfills'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
+import { FirebaseProvider } from 'components/firebase'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -47,27 +48,29 @@ function Updaters() {
 ReactDOM.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <HashRouter>
-          <LanguageProvider>
-            <AnalyticsProvider>
-              <Web3ReactProvider getLibrary={getLibrary}>
-                <Web3ProviderNetwork getLibrary={getLibrary}>
-                  <Blocklist>
-                    <TermsOfUse>
-                      <Updaters />
-                      <ThemeProvider>
-                        <ThemedGlobalStyle />
-                        <App />
-                      </ThemeProvider>
-                    </TermsOfUse>
-                  </Blocklist>
-                </Web3ProviderNetwork>
-              </Web3ReactProvider>
-            </AnalyticsProvider>
-          </LanguageProvider>
-        </HashRouter>
-      </Provider>
+      <FirebaseProvider>
+        <Provider store={store}>
+          <HashRouter>
+            <LanguageProvider>
+              <AnalyticsProvider>
+                <Web3ReactProvider getLibrary={getLibrary}>
+                  <Web3ProviderNetwork getLibrary={getLibrary}>
+                    <Blocklist>
+                      <TermsOfUse>
+                        <Updaters />
+                        <ThemeProvider>
+                          <ThemedGlobalStyle />
+                          <App />
+                        </ThemeProvider>
+                      </TermsOfUse>
+                    </Blocklist>
+                  </Web3ProviderNetwork>
+                </Web3ReactProvider>
+              </AnalyticsProvider>
+            </LanguageProvider>
+          </HashRouter>
+        </Provider>
+      </FirebaseProvider>
     </QueryClientProvider>
   </StrictMode>,
   document.getElementById('root')

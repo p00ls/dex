@@ -138,6 +138,8 @@
     "postinstall": "yarn contracts:compile && yarn graphql:generate && yarn i18n:compile",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:devel": "env-cmd -f ./.env.devel react-scripts build",
+    "build:production": "env-cmd -f ./.env.production react-scripts build",
     "test": "react-scripts test --env=./custom-test-env.js",
     "test:e2e": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
     "lint": "yarn eslint .",
@@ -162,9 +164,12 @@
     "yarn": "1.22.19"
   },
   "dependencies": {
+    "@firebase/app": "^0.8.2",
+    "@firebase/app-check": "^0.5.15",
     "@segment/analytics-next": "^1.43.0",
     "@segment/snippet": "^4.15.3",
     "@tanstack/react-query": "^4.13.0",
+    "env-cmd": "^10.1.0",
     "js-cookie": "3.0.1"
   }
 }
