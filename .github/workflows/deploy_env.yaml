@@ -36,7 +36,7 @@ jobs:
         if: github.workflow == 'CI'
         uses: actions/download-artifact@v3
         with:
-          name: build
+          name: build_${{ inputs.env }}
           path: build
       - name: Download Build artifact
         if: github.workflow != 'CI'
@@ -44,7 +44,7 @@ jobs:
         with:
           commit: ${{ env.COMMIT_ID }}
           workflow: ci.yaml
-          name: build
+          name: build_${{ inputs.env }}
           path: build
           workflow_conclusion: ""
       - id: 'auth'
