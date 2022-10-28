@@ -6,9 +6,7 @@ on:
         description: environment to build
         required: true
         type: string
-    secrets:
-      PACKAGES_ACCESS:
-        required: true
+
 jobs:
   build:
     name: Build
@@ -26,7 +24,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_ACCESS }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         run: yarn build:${{ inputs.env }}
       - name: Upload build artifact
