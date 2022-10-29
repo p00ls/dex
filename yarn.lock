@@ -2884,10 +2884,10 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.4.2-solc-0.7.tgz#38f4dbab672631034076ccdf2f3201fab1726635"
   integrity sha512-W6QmqgkADuFcTLzHL8vVoNBtkwjvQRpYIAom7KiUNoLKghyx3FgH0GBjt8NRvigV1ZmMOBllvE1By1C+bi8WpA==
 
-"@p00ls/uniswap-v2-sdk@3.0.6":
-  version "3.0.6"
-  resolved "https://npm.pkg.github.com/download/@p00ls/uniswap-v2-sdk/3.0.6/3e667ad53c7543159cb06221452ed894336c6281#3e667ad53c7543159cb06221452ed894336c6281"
-  integrity sha512-MQwgeTnvsAG9YUe8SZ668z/K8EybFMPwhUszTq0guDU9hLb1jtu0n647qRUBWsGDndGX/uIc9GBgcNqqrrvkxw==
+"@p00ls/uniswap-v2-sdk@3.0.5":
+  version "3.0.5"
+  resolved "https://npm.pkg.github.com/download/@p00ls/uniswap-v2-sdk/3.0.5/332fa57ad6a7572602c63890262a09b8f3c8fdbb#332fa57ad6a7572602c63890262a09b8f3c8fdbb"
+  integrity sha512-o9GGv/ynny0Fo3Sy6sWMLXSwsG1W00R5Vm+z+6jMmIjkgQZv5WDSFOsScXtyB8KPYD20hh2vATUrhtM7ohIHTw==
   dependencies:
     "@ethersproject/address" "^5.0.0"
     "@ethersproject/solidity" "^5.0.0"
