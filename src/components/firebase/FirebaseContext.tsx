@@ -1,10 +1,9 @@
-import { FirebaseApp, FirebaseOptions, initializeApp } from '@firebase/app'
-import { AppCheck, initializeAppCheck, ReCaptchaEnterpriseProvider } from '@firebase/app-check'
-import React, { ReactNode, useContext, useMemo } from 'react'
+import { FirebaseOptions, initializeApp } from '@firebase/app'
+import { getToken, initializeAppCheck, ReCaptchaEnterpriseProvider } from '@firebase/app-check'
+import React, { ReactNode, useCallback, useContext, useMemo } from 'react'
 
 export interface Firebase {
-  firebaseApp: FirebaseApp
-  appCheck: AppCheck
+  getAppCheckToken: () => Promise<string>
 }
 
 export const FirebaseContext = React.createContext<Firebase | undefined>(undefined)
@@ -18,7 +17,7 @@ export const firebaseConfig: FirebaseOptions = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 }
 
-const initFirebase = (): Firebase => {
+const initFirebase = () => {
   const firebaseApp = initializeApp(firebaseConfig)
   const appCheck = initializeAppCheck(firebaseApp, {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -30,8 +29,17 @@ const initFirebase = (): Firebase => {
 }
 
 export const FirebaseProvider = ({ children }: { children?: ReactNode }) => {
-  const context: Firebase = useMemo(() => initFirebase(), [])
-  return <FirebaseContext.Provider value={context}>{children}</FirebaseContext.Provider>
+  const { appCheck } = useMemo(() => initFirebase(), [])
+  const getAppCheckToken = useCallback(async () => {
+    const token = await getToken(appCheck)
+    return token.token
+  }, [appCheck])
+  return <FirebaseContext.Provider value={{ getAppCheckToken }}>{children}</FirebaseContext.Provider>
+}
+
+export const FakeFirebaseProvider = ({ children }: { children?: ReactNode }) => {
+  const getAppCheckToken = useCallback(async () => 'fake-token', [])
+  return <FirebaseContext.Provider value={{ getAppCheckToken }}>{children}</FirebaseContext.Provider>
 }
 
 export const useFirebase = () => {

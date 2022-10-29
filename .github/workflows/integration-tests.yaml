@@ -29,7 +29,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn cypress install
-      - run: yarn build
+      - run: yarn build:test
         env:
           CI: false
           REACT_APP_SERVICE_WORKER: false

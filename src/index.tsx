@@ -4,7 +4,7 @@ import 'polyfills'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
-import { FirebaseProvider } from 'components/firebase'
+import { FakeFirebaseProvider, FirebaseProvider } from 'components/firebase'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -45,10 +45,12 @@ function Updaters() {
   )
 }
 
+const FBProvider = process.env.REACT_APP_DISABLE_FIREBASE ? FakeFirebaseProvider : FirebaseProvider
+
 ReactDOM.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <FirebaseProvider>
+      <FBProvider>
         <Provider store={store}>
           <HashRouter>
             <LanguageProvider>
@@ -70,7 +72,7 @@ ReactDOM.render(
             </LanguageProvider>
           </HashRouter>
         </Provider>
-      </FirebaseProvider>
+      </FBProvider>
     </QueryClientProvider>
   </StrictMode>,
   document.getElementById('root')
