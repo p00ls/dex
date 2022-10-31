@@ -165,8 +165,8 @@
     "yarn": "1.22.19"
   },
   "dependencies": {
-    "@firebase/app": "^0.8.2",
-    "@firebase/app-check": "^0.5.15",
+    "@firebase/app": "^0.8.3",
+    "@firebase/app-check": "^0.5.16",
     "@segment/analytics-next": "^1.43.0",
     "@segment/snippet": "^4.15.3",
     "@tanstack/react-query": "^4.13.0",
