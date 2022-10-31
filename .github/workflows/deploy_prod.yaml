@@ -27,6 +27,8 @@ jobs:
       cancel-in-progress: true
     secrets: inherit
   deploy_prod:
+    needs:
+      - build_prod
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy_env.yaml
     with:
