@@ -57,7 +57,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     name: 'Open in Coinbase Wallet',
     iconURL: COINBASE_ICON_URL,
     description: 'Open in Coinbase Wallet app.',
-    href: 'https://go.cb-w.com/mtUDhEZPy1',
+    href: 'https://go.cb-w.com/dapp?cb_url=https%3A%2F%2Fapp.zerozero.markets',
     color: '#315CF5',
     mobile: true,
     mobileOnly: true,
