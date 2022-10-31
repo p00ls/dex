@@ -33,20 +33,10 @@ jobs:
         with:
           ref: ${{ env.COMMIT_ID }}
       - name: Download Build artifact
-        if: github.workflow == 'CI'
         uses: actions/download-artifact@v3
         with:
           name: build_${{ inputs.env }}
           path: build
-      - name: Download Build artifact
-        if: github.workflow != 'CI'
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          commit: ${{ env.COMMIT_ID }}
-          workflow: ci.yaml
-          name: build_${{ inputs.env }}
-          path: build
-          workflow_conclusion: ""
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
