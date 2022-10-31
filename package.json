@@ -140,7 +140,7 @@
     "build": "react-scripts build",
     "build:test": "env-cmd -f ./.env.test react-scripts build",
     "build:devel": "env-cmd -f ./.env.devel react-scripts build",
-    "build:production": "env-cmd -f ./.env.production react-scripts build",
+    "build:prod": "env-cmd -f ./.env.production react-scripts build",
     "test": "react-scripts test --env=./custom-test-env.js",
     "test:e2e": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
     "lint": "yarn eslint .",

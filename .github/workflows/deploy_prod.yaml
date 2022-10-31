@@ -6,9 +6,9 @@ on:
         description: environment
         required: true
         type: choice
-        default: 'production'
+        default: 'prod'
         options:
-          - 'production'
+          - 'prod'
           - 'devel'
       ref:
         description: SHA1 to checkout
