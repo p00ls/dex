@@ -51,9 +51,8 @@ const Accept = styled(Button)`
 `
 
 export const Checkbox = styled.input`
-  height: 20px;
   margin: 0;
-  vertical-align: middle;
+  flex: 0 0 16px;
 `
 
 export const TermsOfUseView: React.FC<Props> = ({ accept }: Props) => {
@@ -78,11 +77,12 @@ export const TermsOfUseView: React.FC<Props> = ({ accept }: Props) => {
             type="checkbox"
             checked={termsOfUseChecked}
             onChange={() => setTermsOfUseChecked(!termsOfUseChecked)}
+            id="confirmTermsOfUse"
           />
-          <span style={{ textAlign: 'left' }}>
+          <label htmlFor="confirmTermsOfUse" style={{ textAlign: 'left' }}>
             In using this Interface, you confirm that you are not located in, incorporated or otherwise established in,
             or a citizen or resident of, a Prohibited Territory.
-          </span>
+          </label>
         </Flex>
       </Validation>
 
