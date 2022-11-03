@@ -2,11 +2,10 @@ import { Trans } from '@lingui/macro'
 import { CHAIN_INFO, SupportedChainId } from 'constants/chains'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import { useActiveWeb3React } from 'hooks/web3'
-import { useCallback, useRef } from 'react'
+import { useRef } from 'react'
 import { ChevronDown } from 'react-feather'
 import { useModalOpen, useToggleModal } from 'state/application/hooks'
 import { ApplicationModal } from 'state/application/reducer'
-import { useAppSelector } from 'state/hooks'
 import styled from 'styled-components/macro'
 import { MEDIA_WIDTHS } from 'theme'
 import { switchToNetwork } from 'utils/switchToNetwork'
@@ -104,25 +103,17 @@ export default function NetworkSelector() {
   const open = useModalOpen(ApplicationModal.NETWORK_SELECTOR)
   const toggle = useToggleModal(ApplicationModal.NETWORK_SELECTOR)
   useOnClickOutside(node, open ? toggle : undefined)
-  const implements3085 = useAppSelector((state) => state.application.implements3085)
 
   const info = chainId ? CHAIN_INFO[chainId] : undefined
 
-  const showSelector = Boolean(implements3085)
   const mainnetInfo = CHAIN_INFO[SupportedChainId.MAINNET]
-
-  const conditionalToggle = useCallback(() => {
-    if (showSelector) {
-      toggle()
-    }
-  }, [showSelector, toggle])
 
   if (!chainId || !info || !library) {
     return null
   }
 
   function Row({ targetChain }: { targetChain: number }) {
-    if (!library || !chainId || (!implements3085 && targetChain !== chainId)) {
+    if (!library || !chainId) {
       return null
     }
     const handleRowClick = () => {
@@ -143,10 +134,10 @@ export default function NetworkSelector() {
 
   return (
     <SelectorWrapper ref={node as any}>
-      <SelectorControls onClick={conditionalToggle} interactive={showSelector}>
-        <SelectorLogo interactive={showSelector} src={info.logoUrl || mainnetInfo.logoUrl} />
+      <SelectorControls onClick={toggle} interactive>
+        <SelectorLogo interactive src={info.logoUrl || mainnetInfo.logoUrl} />
         <SelectorLabel>{info.label}</SelectorLabel>
-        {showSelector && <StyledChevronDown />}
+        <StyledChevronDown />
       </SelectorControls>
       {open && (
         <FlyoutMenu>
