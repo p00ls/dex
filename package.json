@@ -161,7 +161,7 @@
   },
   "license": "GPL-3.0-or-later",
   "volta": {
-    "node": "14.20.0",
+    "node": "16.18.0",
     "yarn": "1.22.19"
   },
   "dependencies": {
