@@ -380,7 +380,7 @@ export default function WalletModal({
               <AutoRow style={{ flexWrap: 'nowrap' }}>
                 <ThemedText.Black fontSize={14}>
                   <Trans>
-                    By connecting a wallet, you agree to zerozero{' '}
+                    By connecting a wallet, you agree to ZZ Liquidity Inc.{' '}
                     <ExternalLink href="https://app.zerozero.markets/ZZ Liquidity - Website Terms of Use.pdf">
                       Terms of Service
                     </ExternalLink>

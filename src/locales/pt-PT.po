@@ -328,8 +328,8 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Ao adicionar esta lista, está a confiar implicitamente que os dados estão corretos. Qualquer pessoa pode criar uma lista, incluindo a criação de versões falsas de listas existentes e listas que afirmam representar projetos que não possuem uma."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to zerozero <0>Terms of Service</0> and acknowledge that you have read and understand the zerozero <1>Protocol Disclaimer</1>."
-msgstr "Ao conectar uma carteira, você concorda com os Termos de Serviço</0> <0>e reconhece que leu e entendeu a Isenção <1>Responsabilidade do Protocolo</1>do zerozero 2."
+msgid "By connecting a wallet, you agree to ZZ Liquidity Inc. <0>Terms of Service</0> and acknowledge that you have read and understand the zerozero <1>Protocol Disclaimer</1>."
+msgstr "Ao conectar uma carteira, você concorda com os <0>Termos de Serviço</0> e reconhece que leu e entendeu a Isenção <1>Responsabilidade do Protocolo</1>do zerozero."
 
 #: src/pages/Vote/styled.tsx
 msgid "Canceled"
@@ -1777,8 +1777,8 @@ msgid "zerozero Governance"
 msgstr "zerozero Governança"
 
 #: src/components/PrivacyPolicy/index.tsx
-msgid "zerozero Terms of Service"
-msgstr "Termos de serviço do zerozero"
+msgid "ZZ Liquidity Inc. Terms of Service"
+msgstr "Termos de serviço do ZZ Liquidity Inc."
 
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "zerozero available in: <0>{0}</0>"

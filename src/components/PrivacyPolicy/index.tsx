@@ -112,7 +112,7 @@ export function PrivacyPolicy() {
                 <AutoRow gap="4px">
                   <Info size={20} />
                   <ThemedText.Main fontSize={14} color={'primaryText1'}>
-                    <Trans>zerozero Terms of Service</Trans>
+                    <Trans>ZZ Liquidity Inc. Terms of Service</Trans>
                   </ThemedText.Main>
                 </AutoRow>
                 <StyledLinkOut size={20} />
@@ -127,7 +127,7 @@ export function PrivacyPolicy() {
                 <AutoRow gap="4px">
                   <Info size={20} />
                   <ThemedText.Main fontSize={14} color={'primaryText1'}>
-                    <Trans>zerozero Privacy Policy</Trans>
+                    <Trans>ZZ Liquidity Inc. Privacy Policy</Trans>
                   </ThemedText.Main>
                 </AutoRow>
                 <StyledLinkOut size={20} />
