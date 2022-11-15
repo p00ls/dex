@@ -5,7 +5,7 @@ import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.
 import { useMemo } from 'react'
 
 import { FACTORY_TEMPLATE_ADDRESSES, V2_FACTORY_ADDRESSES } from '../constants/addresses'
-import { LIQUIDITY_PROVIDER_TOKEN_NAME, LIQUIDITY_PROVIDER_TOKEN_SYMBOL } from '../constants/tokens'
+import { getLiquidityProviderTokenSymbol, LIQUIDITY_PROVIDER_TOKEN_NAME } from '../constants/tokens'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 
 const PAIR_INTERFACE = new Interface(IUniswapV2PairABI)
@@ -62,7 +62,7 @@ export function useV2Pairs(currencies: [Currency | undefined, Currency | undefin
           CurrencyAmount.fromRawAmount(token1, reserve1.toString()),
           V2_FACTORY_ADDRESSES,
           FACTORY_TEMPLATE_ADDRESSES,
-          LIQUIDITY_PROVIDER_TOKEN_SYMBOL,
+          getLiquidityProviderTokenSymbol(tokenA, tokenB),
           LIQUIDITY_PROVIDER_TOKEN_NAME
         ),
       ]
