@@ -10,7 +10,7 @@ export const useAddressAllowed = (address: string | null | undefined): boolean =
     ['addressAllowed', address],
     async () => {
       const appCheckToken = await getAppCheckToken()
-      return fetch(`${screeningUrl}/${address}`, {
+      return fetch(`${screeningUrl}/screening/${address}`, {
         headers: {
           'X-Firebase-AppCheck': appCheckToken,
         },
