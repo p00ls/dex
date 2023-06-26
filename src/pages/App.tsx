@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 import AnalyticsReporter from '../components/analytics/AnalyticsReporter'
+import Deprecated from '../components/Deprecated'
 import ErrorBoundary from '../components/ErrorBoundary'
 import Header from '../components/Header'
 import Polling from '../components/Header/Polling'
@@ -61,6 +62,7 @@ export default function App() {
             <Header />
           </HeaderWrapper>
           <BodyWrapper>
+            <Deprecated />
             <Popups />
             <Polling />
             <Suspense fallback={<Loader />}>
